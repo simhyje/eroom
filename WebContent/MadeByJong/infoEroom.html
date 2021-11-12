@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=".\style.css"/>
+    <script src=".\script.js" type="text/javascript"></script>
+
+    <style>
+      .flex-container .flex-item:nth-child(1) { flex-basis: 150px; }
+      .flex-container .flex-item:nth-child(2) { flex-basis: 100%; }
+    </style>
+  </head>
+  <body>
+      <div class="flex-container">
+        <div class="flex-item" style="justify-content:space-between;">
+          <a href="javascript:window.history.back();">
+            <img src=".\image\backArrow2.png" alt="뒤로가기" width="100px" height="100px">
+          </a>
+          <div>카페 안내</div>
+          <a href="/MadeByJong/main.html?adCount=1">
+            <img src=".\image\home.png" alt="홈으로" width="100px" height="100px">
+          </a>
+        </div>
+        <div class="flex-item" id="secondItem">
+          <img id="mainImage" src=".\image\cute.gif" alt="소중해">
+        </div>
+      </div>
+
+      <script>
+        let secondItemControl = document.getElementById('secondItem');
+
+        let imgControl = document.getElementById('mainImage');
+        imgControl.width = secondItemControl.clientWidth - 100;
+        imgControl.Height = auto;
+
+      </script>
+  </body>
+</html>
