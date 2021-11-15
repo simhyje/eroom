@@ -6,13 +6,41 @@
     <link rel="stylesheet" href=".\style.css"/>
     <script src=".\script.js" type="text/javascript"></script>
 
-    <style>
+    <!-- <style>
       .flex-container .flex-item:nth-child(1) { flex-basis: 150px; }
       .flex-container .flex-item:nth-child(2) { flex-basis: 100%; }
+    </style> -->
+
+    <style>
+      .navigator .navigation {
+        position: relative;
+        width: 100vw;
+        height: 64px;
+        z-index: 10;
+      }
+
+      .navigator .backArrow {
+        position: absolute;
+        top:23px;
+        right:10px;
+        z-index: 20;
+      }
+      /* --------------------------------------------------------- */
     </style>
+
   </head>
   <body>
-      <div class="flex-container">
+    <div style="position:absolute; line-height: 0;">
+      <div class="navigator">
+        <img class="navigation" src="./image/toEroom/navigationBar.png" alt="네비게이션">
+        <a href="javascript:window.history.back();" style="z-index:50;">
+          <img class="backArrow" src="./image/toEroom/backArrow3.png" alt="뒤로가기" width="33px" height="33px">
+        </a>
+      </div>
+    </div>
+
+
+      <!-- <div class="flex-container">
         <div class="flex-item" style="justify-content:space-between;">
           <a href="javascript:window.history.back();">
             <img src=".\image\backArrow2.png" alt="뒤로가기" width="100px" height="100px">
@@ -34,6 +62,6 @@
         imgControl.width = secondItemControl.clientWidth - 100;
         imgControl.Height = auto;
 
-      </script>
+      </script> -->
   </body>
 </html>
