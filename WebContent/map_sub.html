@@ -2,222 +2,518 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-<title>Insert title here</title>
- <style>
-#mapwrap{position:relative;overflow:hidden;}
-.category, .category *{margin:0;padding:0;color:#000;}   
-.category {position:absolute;overflow:hidden;top:10px;left:10px;width:150px;height:50px;z-index:10;border:1px solid black;font-family:'Malgun Gothic','맑은 고딕',sans-serif;font-size:12px;text-align:center;background-color:#fff;}
-.category .menu_selected {background:#FF5F4A;color:#fff;border-left:1px solid #915B2F;border-right:1px solid #915B2F;margin:0 -1px;} 
-.category li{list-style:none;float:left;width:50px;height:45px;padding-top:5px;cursor:pointer;} 
-.category .ico_comm {display:block;margin:0 auto 2px;width:22px;height:26px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/category.png') no-repeat;} 
-.category .ico_coffee {background-position:-10px 0;}  
-.category .ico_store {background-position:-10px -36px;}   
-.category .ico_carpark {background-position:-10px -72px;} 
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<title>이루미 길잡이</title>
+<style>
+a:link {
+  color : black;
+}
+.container{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.back{
+flex-direction: row;
+width:50px;
+height:50px;
+float:left;
+}
+/* #back{
+margin-left:-20px;
+
+} */
+#mapwrap {
+	position: relative;
+	overflow: hidden;
+}
+
+.category, .category * {
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+.category {
+	position: absolute;
+	overflow: hidden;
+	top: 10px;
+	left: 10px;
+	height: 50px;
+	z-index: 10;
+	border: 1px solid black;
+	font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+	font-size: 12px;
+	text-align: center;
+	background-color: #fff;
+}
+
+.category .menu_selected {
+	background: #FF5F4A;
+	color: #fff;
+	border-left: 1px solid #915B2F;
+	border-right: 1px solid #915B2F;
+	margin: 0 -1px;
+}
+
+.category li {
+	list-style: none;
+	float: left;
+	width: 70px;
+	height: 45px;
+	padding-top: 5px;
+	cursor: pointer;
+}
+
+/* .category .ico_comm {
+	display: block;
+	margin: 0 auto 2px;
+	width: 22px;
+	height: 26px;
+	background:
+		url('./image/food.png')
+		no-repeat;
+}
+ */
+.category .ico_coffee {
+	background-position: -10px 0;
+}
+
+/* .category .ico_store {
+	background-position: -10px -36px;
+} */
+.mapDetail{
+	width:18px;
+	height:18px;
+}
+ #foodlist{
+display: flex;
+flex-direction: column;
+justify-content: left;
+align-items: left;
+padding-left:-20px; 
+}
+ul li {
+list-style:none; 
+text-align:center;
+	line-height: 50px;
+	background:skyblue;
+	font-weight: bold;
+	border-right:solid 1px gray;
+	border-bottom:solid 1px gray;
+	height: 40px;
+	line-height: 40px;
+	background: #f3f3f3;
+}
+.table{
+width:350px;
+height:200px;
+overflow:scroll;
+}
+a { text-decoration: none; }
+ul#foodlist,#cafelist{
+padding:0px 0px 0px 0px
+}
+
 </style>
 </head>
 <body>
-<div id="mapwrap">  
-<div id="map" style="width:800px;height:600px;"></div>
-    <!-- 지도 위에 표시될 마커 카테고리 -->
-    <div class="category">
-        <ul>
-            <li id="foodMenu" onclick="changeMarker('food')">
-                <span class="ico_comm ico_coffee"></span>
-                음식점
-            </li>
+	<div class="container">
+	<div><img class="back" src="./image/back.svg"><img id="back" class="back" src="./image/home.png"></div>	
+	<div id="mapwrap">
+		<div id="map" style="width: 350px; height: 450px;"></div>
+		<!-- 지도 위에 표시될 마커 카테고리 -->
+		<div class="category">
+			<ul>
+				<li id="foodMenu" onclick="changeMarker('food')">
+				<span class="ico_comm ico_coffee"></span>음식점</li>
+				<li id="cafeMenu" onclick="changeMarker('cafe')">
+				<span class="ico_comm ico_store"></span>카페</li>
+			</ul>
+		</div>
+	</div>
+	<div class="table">
+		<ul id="foodlist">
+			<li class="foodlist" onclick="panTo(0)"><a href="#">천왕짬뽕</a><a href="http://naver.me/xHkJSmDU" target="_blank"><img src="./image/mapDetail.svg" class="mapDetail"></a></li>
+			<li class="foodlist" onclick="panTo(1)"><a href="#">병천순대 </a><a href="http://naver.me/x9J5FRyB" target="_blank"><img src="./image/mapDetail.svg" class="mapDetail"></a></li>
+			<li class="foodlist" onclick="panTo(2)"><a href="#">카츠랑천왕점</a><a href="http://naver.me/xWowKzhy" target="_blank"><img src="./image/mapDetail.svg" class="mapDetail"></a></li>
+			<li class="foodlist" onclick="panTo(3)"><a href="#">돈우네정육식당</a><a href="http://naver.me/IImsR8P3" target="_blank"><img src="./image/mapDetail.svg" class="mapDetail"></a></li>
+			<li class="foodlist" onclick="panTo(4)"><a href="#">식탐</a> <a href="http://naver.me/5PJ7urg5" target="_blank"><img src="./image/mapDetail.svg" class="mapDetail"></a></li>
+			<li class="foodlist" onclick="panTo(5)"><a href="#">해밀</a> <a href="http://naver.me/FiW8GhLV" target="_blank"><img src="./image/mapDetail.svg" class="mapDetail"></a></li>
+			<li class="foodlist" onclick="panTo(6)"><a href="#">스시쿠야천왕점</a><a href="http://naver.me/5b3A4VsK" target="_blank"><img src="./image/mapDetail.svg" class="mapDetail"></a></li>
+			<li class="foodlist" onclick="panTo(7)"><a href="#">그집쭈꾸미 천왕역점 </a><a href="http://naver.me/GAeagEqy" target="_blank"><img src="./image/mapDetail.svg" class="mapDetail"></a></li>
+			<li class="foodlist" onclick="panTo(8)"><a href="#">초비가정식</a> <a href="http://naver.me/GfPtbDii" target="_blank"><img src="./image/mapDetail.svg" class="mapDetail"></a></li>
+			<li class="foodlist" onclick="panTo(9)"><a href="#">국수나무 천왕점 </a><a href="http://naver.me/GUL6tWvr" target="_blank"><img src="./image/mapDetail.svg" class="mapDetail"></a></li>
+			<li class="foodlist" onclick="panTo(10)"><a href="#">시키스시</a> <a href="http://naver.me/5qPba5Fa" target="_blank"><img src="./image/mapDetail.svg" class="mapDetail"></a></li>
+			<li class="foodlist" onclick="panTo(11)"><a href="#">롯데리아 천왕역점</a> <a href="http://naver.me/GW5SJEZg" target="_blank"><img src="./image/mapDetail.svg" class="mapDetail"></a></li>
+			<li class="foodlist" onclick="panTo(12)"><a href="#">헌가네코다리 천왕역점 </a><a href="http://naver.me/G7xUZYWx" target="_blank"><img src="./image/mapDetail.svg" class="mapDetail"></a></li>
+			<li class="foodlist" onclick="panTo(13)"><a href="#">채선당 천왕역점</a> <a href=" http://naver.me/GRvEwDSe" target="_blank"><img src="./image/mapDetail.svg" class="mapDetail"></a></li>
+			<li class="foodlist" onclick="panTo(14)"><a href="#">사생활 </a><a href="http://naver.me/IgT0F6ew" target="_blank"><img src="./image/mapDetail.svg" class="mapDetail"></a></li>
+			<li class="foodlist" onclick="panTo(15)"><a href="#">핑거존 브런치카페 </a><a href="http://naver.me/xAt4jXk2" target="_blank"><img src="./image/mapDetail.svg" class="mapDetail"></a></li>
+			<li class="foodlist" onclick="panTo(16)"><a href="#">kang's cafe</a> <a href="http://naver.me/GaMW2Gr1" target="_blank"><img src="./image/mapDetail.svg" class="mapDetail"></a></li>
 
-        </ul>
-    </div>
+		</ul>
+		<ul id="cafelist">
+			<li class="cafelist" onclick="panTo(0)"><a href="#">메이로드</a> <a href="http://naver.me/xZx5bUWg" target="_blank"><img src="./image/mapDetail.svg" class="mapDetail"></a></li>
+			<li class="cafelist" onclick="panTo(1)"><a href="#">감성카페 </a><a href="http://naver.me/FMAkFyVz" target="_blank"><img src="./image/mapDetail.svg" class="mapDetail"></a></li>
+			<li class="cafelist" onclick="panTo(2)"><a href="#">사생활</a> <a href="http://naver.me/IgT0F6ew" target="_blank"><img src="./image/mapDetail.svg" class="mapDetail"></a></li>
+			<li class="cafelist" onclick="panTo(3)"><a href="#">핑거존 브런치카페</a> <a href="http://naver.me/xAt4jXk2" target="_blank"><img src="./image/mapDetail.svg" class="mapDetail"></a></li>
+			<li class="cafelist" onclick="panTo(4)"><a href="#">kang's cafe </a><a href="http://naver.me/GaMW2Gr1" target="_blank"><img src="./image/mapDetail.svg" class="mapDetail"></a></li>
+			<li class="cafelist" onclick="panTo(5)"><a href="#">12NOI</a><a href="http://naver.me/GaMW2Gr1" target="_blank"><img src="./image/mapDetail.svg" class="mapDetail"></a></li>
+			<li class="cafelist" onclick="panTo(6)"><a href="#">빽다방 천왕역점</a> <a href="http://naver.me/5ZRBYgBY" target="_blank"><img src="./image/mapDetail.svg" class="mapDetail"></a></li>
+			<li class="cafelist" onclick="panTo(7)"><a href="#">카페더빛</a><a href="http://naver.me/xuvNiRes" target="_blank"><img src="./image/mapDetail.svg" class="mapDetail"></a></li>
+			<li class="cafelist" onclick="panTo(8)"><a href="#">카페트렌디</a><a href="http://naver.me/5bXhMUSm" target="_blank"><img src="./image/mapDetail.svg" class="mapDetail"></a></li>
+			<li class="cafelist" onclick="panTo(9)"><a href="#">달보드레</a><a href="http://naver.me/xuIhtPDY" target="_blank"><img src="./image/mapDetail.svg" class="mapDetail"></a></li>
+			<li class="cafelist" onclick="panTo(10)"><a href="#">좋은날 </a><a href="http://naver.me/xGKLxJuR" target="_blank"><img src="./image/mapDetail.svg" class="mapDetail"></a></li>
+			<li class="cafelist" onclick="panTo(11)"><a href="#">와플대학</a><a href="http://naver.me/56rJCufi" target="_blank"><img src="./image/mapDetail.svg" class="mapDetail"></a></li>
+		</ul>
+	</div>
 </div>
 
-
-
-<script type="text/javascript"  src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e7f5bad1fe3f9b06240cea6d2cd9735d"></script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script type="text/javascript"src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e7f5bad1fe3f9b06240cea6d2cd9735d"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
-
-
-var container = document.getElementById('map');
-var options = {
-	center: new kakao.maps.LatLng(37.4850802,126.841292),
-	level: 3
-};
-
-var map = new kakao.maps.Map(container, options);
-
-//마커가 표시될 위치입니다 
-var markerPosition  = new kakao.maps.LatLng(37.4850802,126.841292); 
-
-// 마커를 생성합니다
-var mainmarker = new kakao.maps.Marker({
-    position: markerPosition
-});
-
-// 마커가 지도 위에 표시되도록 설정합니다
-mainmarker.setMap(map);
-
-var content = '<div class ="label"><span class="left"></span><span class="center">청년이룸!</span><span class="right"></span></div>';
-
-//커스텀 오버레이가 표시될 위치입니다 
-var position = new kakao.maps.LatLng(37.4850802,126.841292);  
-
-//커스텀 오버레이를 생성합니다
-var customOverlay = new kakao.maps.CustomOverlay({
- position: position,
- content: content   
-});
-
-//커스텀 오버레이를 지도에 표시합니다
-customOverlay.setMap(map);
-
-var foodPositions=[
-		{						
-			 content: '<div>천왕짬뽕</div>',		  
-			 latlng:new kakao.maps.LatLng(37.4861500, 126.839571) //천왕짬뽕
-		  
-		 },
-		 {
-			 content: '<div>일리노이</div>',	 
-			 latlng:new kakao.maps.LatLng(37.486805721, 126.831607577409)//일리노이
-		 },
-		 {
-			 content: '<div>병천순대</div>',	
-			 latlng:new kakao.maps.LatLng(37.488596824, 126.839564751923)//병천순대
-		 },
-		 { 
-			 content: '<div>카츠랑</div>',
-			 latlng:new kakao.maps.LatLng(37.4861761837, 126.839502313468)//카츠랑
-		 }, 
-		 {
-			 content: '<div>돈우네정육식당</div>',
-			 latlng:new kakao.maps.LatLng(37.4875992373637, 126.839106913316)//돈우네
-		 }, 		 
-		 {
-			 content: '<div>식탐</div>',
-			 latlng:new kakao.maps.LatLng(37.489021738886, 126.839498260854)//식탐
-		 }, 
-		 {
-			 content: '<div>해밀</div>',
-			 latlng:new kakao.maps.LatLng(37.4883180401519, 126.837577318156)//해밀
-		 }, 
-		 {
-			 content: '<div>대구반야월막창</div>',
-			 latlng:new kakao.maps.LatLng(37.4876290144401, 126.83841282056)//대구반야월막창
-		 }, 
-		 {
-			 content: '<div>순뚝순뚝</div>',
-			 latlng:new kakao.maps.LatLng(37.4892814028654, 126.83936111268)//순뚝순뚝
-		 }	
-		 ];
 	
 	
+		var container = document.getElementById('map');
+		var options = {
+			center : new kakao.maps.LatLng(37.4850802, 126.841292),
+			level : 3
+		};
+
+		var map = new kakao.maps.Map(container, options);
+
+ 		//마커가 표시될 위치입니다 
+		var Position = new kakao.maps.LatLng(37.4850802, 126.841292);
+
+		// 마커를 생성합니다
+		var marker = new kakao.maps.Marker({
+			position : Position
+		}); 
+
+		// 마커가 지도 위에 표시되도록 설정합니다
+		marker.setMap(map);
+
+		var content = '<div class ="label"><span class="left"></span><span class="center">청년이룸!</span><span class="right"></span></div>';
+
+		//커스텀 오버레이가 표시될 위치입니다 
+		var position = new kakao.maps.LatLng(37.4850802, 126.841292);
+
+		//커스텀 오버레이를 생성합니다
+ 		var customOverlay = new kakao.maps.CustomOverlay({
+			position : position,
+			content : content
+		}); 
+
+		//커스텀 오버레이를 지도에 표시합니다
+		customOverlay.setMap(map);
+ 		
+		//마커 배열
+		var foodPositions = [
+		new kakao.maps.LatLng(37.486037, 126.838593), //천왕짬뽕
+		new kakao.maps.LatLng(37.488596824, 126.839564751923),//병천순대
+		new kakao.maps.LatLng(37.4861761837, 126.839502313468),//카츠랑
+		new kakao.maps.LatLng(37.487582, 126.839170),//돈우네
+		new kakao.maps.LatLng(37.489021738886, 126.839498260854),//식탐
+		new kakao.maps.LatLng(37.4883180401519, 126.837577318156),//해밀
+		new kakao.maps.LatLng(37.4861761837805, 126.839502313468),//스시쿠야 천왕점
+		new kakao.maps.LatLng(37.4860407392631, 126.838559499205),//그집쭈꾸미 천왕역점
+		new kakao.maps.LatLng(37.486456, 126.839565),//초비가정식
+		new kakao.maps.LatLng(37.4812206902152, 126.839008321337),//국수나무 천왕역점
+		new kakao.maps.LatLng(37.4875691857332, 126.838807227175),//시키스시
+		new kakao.maps.LatLng(37.4866023608152, 126.83824746314),//롯데리아 천왕역점
+		new kakao.maps.LatLng(37.4875992373637, 126.839106913316),//헌가네코다리
+		new kakao.maps.LatLng(37.4866023608152, 126.83824746314),//채선당
+		new kakao.maps.LatLng(37.4912054930086, 126.842026722372),//사생활
+		new kakao.maps.LatLng(37.4811198515805, 126.839725683889),//핑거존브런치 카페
+		new kakao.maps.LatLng(37.4875992373637, 126.839106913316)//kangscafe
+
+		];
+
+		var cafePositions = [ new kakao.maps.LatLng(37.488253, 126.839562),//메이로드
+		new kakao.maps.LatLng(37.487073, 126.839174), //감성카페
+		new kakao.maps.LatLng(37.4912054930086, 126.842026722372), //사생활
+		new kakao.maps.LatLng(37.4811198515805, 126.839725683889), //핑거존브런치
+		new kakao.maps.LatLng(37.4875992373637, 126.839106913316), //kangscafe
+		new kakao.maps.LatLng(37.4868057214022, 126.831607577409), //12NOI
+		new kakao.maps.LatLng(37.4866023608152, 126.83824746314),//빽다방 천왕역점 
+		new kakao.maps.LatLng(37.4834056189034, 126.842135180507), //카페더빛
+		new kakao.maps.LatLng(37.4860407392631, 126.838559499205), //카페트렌디
+		new kakao.maps.LatLng(37.4892814028654, 126.83936111268), //달보드레
+		new kakao.maps.LatLng(37.489916, 126.837656), //좋은날
+		new kakao.maps.LatLng(37.4860407392631, 126.838559499205) //와플대학
+		];
+ 		var fpositions = [{
+			content : '<div>천왕짬뽕</div>',
+			latlng : new kakao.maps.LatLng(37.486037, 126.838593)
+		}, {
+			content : '<div>병천순대</div>',
+			latlng : new kakao.maps.LatLng(37.488596824, 126.839564751923)
+		}, {
+			content : '<div>카츠랑 천왕점</div>',
+			latlng : new kakao.maps.LatLng(37.4861761837, 126.839502313468)
+		}, {
+			content : '<div>돈우네정육식당</div>',
+			latlng : new kakao.maps.LatLng(37.487582, 126.839170)
+		}, {
+			content : '<div>식탐</div>',
+			latlng : new kakao.maps.LatLng(37.489021738886, 126.839498260854)
+		}, {
+			content : '<div>해밀</div>',
+			latlng : new kakao.maps.LatLng(37.4883180401519, 126.837577318156)
+		}, {
+			content : '<div>스시쿠야 천왕점</div>',
+			latlng : new kakao.maps.LatLng(37.4861761837805, 126.839502313468)
+		}, {
+			content : '<div>그집쭈꾸미 천왕역점</div>',
+			latlng : new kakao.maps.LatLng(37.4860407392631, 126.838559499205)
+		}, {
+			content : '<div>초비가정식</div>',
+			latlng : new kakao.maps.LatLng(37.486456, 126.839565)
+		}, {
+			content : '<div>국수나무 천왕점</div>',
+			latlng : new kakao.maps.LatLng(37.4812206902152, 126.839008321337)
+		}, {
+			content : '<div>시키스시</div>',
+			latlng : new kakao.maps.LatLng(37.4875691857332, 126.838807227175)
+		}, {
+			content : '<div>롯데리아 천왕역점</div>',
+			latlng : new kakao.maps.LatLng(37.4866023608152, 126.83824746314)
+		}, {
+			content : '<div>헌가네코다리 천왕역점</div>',
+			latlng : new kakao.maps.LatLng(37.4875992373637, 126.839106913316)
+		}, {
+			content : '<div>채선당 천왕역점</div>',
+			latlng : new kakao.maps.LatLng(37.4866023608152, 126.83824746314)
+		}, {
+			content : '<div>사생활</div>',
+			latlng : new kakao.maps.LatLng(37.4912054930086, 126.842026722372)
+		}, {
+			content : '<div>핑거존 브런치카페</div>',
+			latlng : new kakao.maps.LatLng(37.4811198515805, 126.839725683889)
+		}, {
+			content : '<div>kangs cafe</div>',
+			latlng : new kakao.maps.LatLng(37.4875992373637, 126.839106913316)
+		}];
 	
-var markerImageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/category.png';  // 마커이미지의 주소입니다. 스프라이트 이미지 입니다
-foodMarkers  = [];
+		var cpositions = [ {
+			content : '<div>메이로드</div>',
+			latlng : new kakao.maps.LatLng(37.488253, 126.839562)
+		}, {
+			content : '<div>감성카페</div>',
+			latlng : new kakao.maps.LatLng(37.487073, 126.839174)
+		}, {
+			content : '<div>사생활</div>',
+			latlng : new kakao.maps.LatLng(37.4912054930086, 126.842026722372)
+		}, {
+			content : '<div>핑거존 브런치카페</div>',
+			latlng : new kakao.maps.LatLng(37.4811198515805, 126.839725683889)
+		}, {
+			content : '<div>kangs cafe</div>',
+			latlng : new kakao.maps.LatLng(37.4875992373637, 126.839106913316)
+		}, {
+			content : '<div>12NOI</div>',
+			latlng : new kakao.maps.LatLng(37.4868057214022, 126.831607577409)
+		}, {
+			content : '<div>빽다방 천왕역점</div>',
+			latlng : new kakao.maps.LatLng(37.4866023608152, 126.83824746314)
+		}, {
+			content : '<div>카페더빛</div>',
+			latlng : new kakao.maps.LatLng(37.4834056189034, 126.842135180507)
+		}, {
+			content : '<div>카페트렌디</div>',
+			latlng : new kakao.maps.LatLng(37.4860407392631, 126.838559499205)
+		}, {
+			content : '<div>달보드레</div>',
+			latlng : new kakao.maps.LatLng(37.4892814028654, 126.83936111268)
+		}, {
+			content : '<div>좋은날</div>',
+			latlng : new kakao.maps.LatLng(37.489916, 126.837656)
+		}, {
+			content : '<div>와플대학</div>',
+			latlng : new kakao.maps.LatLng(37.4860407392631, 126.838559499205)
+		}];
 
+		var markerImageSrc = './image/food.png'; // 마커이미지의 주소입니다. 스프라이트 이미지 입니다
+		var markerImageSrc2 = './image/cafe.png'; // 마커이미지의 주소입니다. 스프라이트 이미지 입니다
+		foodMarkers = [], cafeMarkers = [];
 
-createfoodMarkers();
-//changeMarker('food'); // 지도에 커피숍 마커가 보이도록 설정합니다 
+		createfoodMarkers();
+		createcafeMarkers();
 
-function createMarkerImage(src, size, options) {
-    var markerImage = new kakao.maps.MarkerImage(src, size, options);
-    return markerImage;            
-}
-function createMarker(position, image) {
-    var marker = new kakao.maps.Marker({
+		changeMarker('food'); // 지도에 음식 마커가 보이도록 설정합니다 
+		
+		//마커 이미지를 생성
+		function createMarkerImage(src, size, options) {
+    	var markerImage = new kakao.maps.MarkerImage(src, size, options);
+    	return markerImage;            
+		}
+
+		// 좌표와 마커이미지를 받아 마커를 생성하여 리턴하는 함수입니다
+		function createMarker(position, image) {
+    	
+  		var marker = new kakao.maps.Marker({
         position: position,
         image: image
-    });
-    
-    return marker;  
-}
-
-function createfoodMarkers() {
-    
-    for (var i = 0; i < foodPositions.length; i++) {  
-        
-        var imageSize = new kakao.maps.Size(22, 26),
-            imageOptions = {  
-                spriteOrigin: new kakao.maps.Point(10, 0),    
-                spriteSize: new kakao.maps.Size(36, 98)  
-            };     
-        
-        // 마커이미지와 마커를 생성합니다
-        var markerImage = createMarkerImage(markerImageSrc, imageSize, imageOptions),    
-            marker = createMarker(foodPositions[i], markerImage);  
-        
-        // 생성된 마커를 커피숍 마커 배열에 추가합니다
-        foodMarkers.push(marker);
-    }     
-}
-
-
-//커피숍 마커들의 지도 표시 여부를 설정하는 함수입니다
-/* function setfoodMarkers(map) {        
-    for (var i = 0; i < foodMarkers.length; i++) {  
-    	foodMarkers[i].setMap(map);
-    }        
-} */
-
-/* function changeMarker(type){
-    
-     var foodMenu = document.getElementById('foodMenu');
-    
-    // 커피숍 카테고리가 클릭됐을 때
+    	});
+    	return marker;  
+		}   
    
-    
-        // 커피숍 카테고리를 선택된 스타일로 변경하고
-        foodMenu.className = 'menu_selected';
-        
-        // 편의점과 주차장 카테고리는 선택되지 않은 스타일로 바꿉니다
-        //storeMenu.className = '';
-        //carparkMenu.className = '';
-        
-        // 커피숍 마커들만 지도에 표시하도록 설정합니다
-        //setfoodMarkers(map);
-        //setStoreMarkers(null);
-        //setCarparkMarkers(null);
-        
-     
-}   */
+			 
 
-for (var i = 0; i < foodPositions.length; i ++) {
-    // 마커를 생성합니다
-    var marker = new kakao.maps.Marker({
-        map: map, // 마커를 표시할 지도
-        foodPositions: foodPositions[i].latlng // 마커의 위치
-    });
+		
+		//음식점 마커 
+		function createfoodMarkers() {
 
-    // 마커에 표시할 인포윈도우를 생성합니다 
-    var infowindow = new kakao.maps.InfoWindow({
-        content: foodPositions[i].content // 인포윈도우에 표시할 내용
-    });
+			for (var i = 0; i < foodPositions.length; i++) {
+				var imageSize = new kakao.maps.Size(22, 27),
+	            imageOptions = {  
+	                spriteOrigin: new kakao.maps.Point(0, 0),    
+	                spriteSize: new kakao.maps.Size(30,30)  
+	            };     
+						
+	        // 마커이미지와 마커를 생성합니다
+	        var markerImage = createMarkerImage(markerImageSrc, imageSize, imageOptions);    
+	           
+	        
+	        var marker = new kakao.maps.Marker({
+	            image: markerImage,
+	            position: foodPositions[i] // 마커의 위치
+	        });
+	        foodMarkers.push(marker);
+	        
+	        
+			var iwRemoveable = true;
+	        // 마커에 표시할 인포윈도우를 생성합니다 
+	        var infowindow = new kakao.maps.InfoWindow({
+	            content: fpositions[i].content, // 인포윈도우에 표시할 내용
+	            removable : iwRemoveable
+	        })
 
-    // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
-    // 이벤트 리스너로는 클로저를 만들어 등록합니다 
-    // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
-    kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
-    kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
-}
+	        // 마커에 클릭이벤트를 등록합니다
+	        kakao.maps.event.addListener(marker, 'click', function() {
+	              // 마커 위에 인포윈도우를 표시합니다
+	              infowindow.open(map, marker); 
+	        
+	        });
+	        
+	     // 인포윈도우를 표시하는 클로저를 만드는 함수입니다 
+	        function makeOverListener(map, marker, infowindow) {
+	            return function() {
+	                infowindow.open(map, marker);
+	            };
+	        }
 
-// 인포윈도우를 표시하는 클로저를 만드는 함수입니다 
-function makeOverListener(map, marker, infowindow) {
-    return function() {
-        infowindow.open(map, marker);
-    };
-}
+	        // 인포윈도우를 닫는 클로저를 만드는 함수입니다 
+	        function makeOutListener(infowindow) {
+	            return function() {
+	                infowindow.close();
+	            };
+	        }
+	        
+	        
+	 
+			
+				
+			}
+		}
+		
+		
+		
+	 	//음식점 마커들의 지도 표시 여부를 설정하는 함수입니다
+		function setfoodMarkers(map) {
+			for (var i = 0; i < foodMarkers.length; i++) {				
+				foodMarkers[i].setMap(map);
+	
+			}
+		}
+	 	
+	 	
 
-// 인포윈도우를 닫는 클로저를 만드는 함수입니다 
-function makeOutListener(infowindow) {
-    return function() {
-        infowindow.close();
-    };
-}
+		//카페 마커를 생성하고 카페 마커 배열에 추가하는 함수입니다
+		function createcafeMarkers() {
+			for (var i = 0; i < cafePositions.length; i++) {
+				
+			     var imageSize = new kakao.maps.Size(22, 35),
+		            imageOptions = {  
+		                spriteOrigin: new kakao.maps.Point(0, 0),    
+		                spriteSize: new kakao.maps.Size(30, 30)  
+		            };     
+		        
+		        // 마커이미지와 마커를 생성합니다
+		        var markerImage = createMarkerImage(markerImageSrc2, imageSize, imageOptions),    
+		            marker = createMarker(cafePositions[i], markerImage);  
+			
+  		
+				// 생성된 마커를 카페 마커 배열에 추가합니다
+				cafeMarkers.push(marker);
+			}
+		}
 
+		//카페 마커들의 지도 표시 여부를 설정하는 함수입니다
+		function setcafeMarkers(map) {
+			for (var i = 0; i < cafeMarkers.length; i++) {
+				cafeMarkers[i].setMap(map);
+			}
+		}
 
+		function changeMarker(type) {
 
+			var foodMenu = document.getElementById('foodMenu');
+			var cafeMenu = document.getElementById('cafeMenu');
+			
+			// 커피숍 카테고리가 클릭됐을 때
+			if (type === 'food') {
 
+				//음식 카테고리를 선택된 스타일로 변경하고
+				foodMenu.className = 'menu_selected';
+				//카페 카테고리 선택 안 하기 
+				cafeMenu.className = '';
+				// 커피숍 마커들만 지도에 표시하도록 설정합니다
+				setfoodMarkers(map);
+				setcafeMarkers(null);
+				document.getElementById("foodlist").style.display = "block";
+				document.getElementById("cafelist").style.display = "none";
+				var foodlist = document.getElementsByClassName('foodlist');
+						
+				
+				
+			} else if (type === 'cafe') { // 편의점 카테고리가 클릭됐을 때
 
-</script>
+				// 편의점 카테고리를 선택된 스타일로 변경하고
+				foodMenu.className = '';
+				cafeMenu.className = 'menu_selected';
+
+				// 편의점 마커들만 지도에 표시하도록 설정합니다
+				setfoodMarkers(null);
+				setcafeMarkers(map);
+				document.getElementById("foodlist").style.display = "none";
+				document.getElementById("cafelist").style.display = "block";
+
+			}
+		}		
+	 
+		function panTo(value) {
+		    
+		  var Lat=foodPositions[value].getLat();
+		   var Lng=foodPositions[value].getLng();
+					
+		    
+		    var moveLatLon = new kakao.maps.LatLng(Lat, Lng);
+		    
+		    // 지도 중심을 부드럽게 이동시킵니다
+		    // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
+		    map.panTo(moveLatLon);            
+		}
+		
+
+		
+		
+		
+
+	</script>		
+
 </body>
 </html>
