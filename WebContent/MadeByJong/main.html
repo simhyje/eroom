@@ -4,9 +4,9 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=".\style.css?a"/>
+    <link rel="stylesheet" href="./style.css?c"/>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <script src=".\script.js" type="text/javascript"></script>
+    <script src="./script.js" type="text/javascript"></script>
 
     <style>
       .flex-container .flex-item:nth-child(1) { flex-grow: 7; }
@@ -57,8 +57,11 @@
 
       #slider-wrap ul#slider li img {
           display: block;
-          width: 95vw;
-          height: 70vh;
+          width: calc(95vw - 20px);
+          /* height: 70vh; */
+          padding-left: 10px;
+          padding-right: 10px;
+          background-color: #C4C4C4;
       }
 
       .slider-btns {
@@ -107,7 +110,7 @@
 
       #slider-pagination-wrap {
           min-width: 20px;
-          top:90%;
+          /* top:90%; */
           margin-left: auto;
           margin-right: auto;
           height: 15px;
@@ -125,7 +128,7 @@
           width: 10px;
           height: 10px;
           border-radius: 90%;
-          background: deepskyblue;
+          background: #70BDB8;
           opacity: 0.5;
           position: relative;
           top: 0;
@@ -136,6 +139,7 @@
           height: 20px;
           top: 3px;
           opacity: 1;
+          background: #1C4060;
           -webkit-box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 0px;
           box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 0px;
       }
@@ -154,17 +158,16 @@
         top:0;
         z-index:9000;
         background-color:#000;
-        display:none;
         vertical-align: middle;
       }
 
       .window {
         display: none;
         position: absolute;
-        width: 50px;
-        height: 50px;
-        right: 20px;
-        top: 20px;
+        width: 36px;
+        height: 36px;
+        right: 10px;
+        top: 10px;
         z-index: 10000;
       }
 
@@ -174,6 +177,17 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+      }
+
+      #closeImage {
+        width: 100%;
+        height: 100%;
+      }
+
+      .mainButton {
+        text-align: left;
+        padding: 0 10px;
+        line-height: 0;
       }
 
       @media (min-width:1024px) {
@@ -188,30 +202,35 @@
         }
 
         #slider-wrap ul#slider li img {
-          width: 1024px;
-          height: 450px;
+          width: 984px;
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        .window {
+          width: 108px;
+          height: 108px;
         }
       }
     </style>
   </head>
   <body>
       <div class="flex-container">
-        <div class="flex-item" style="border: 1px solid gray; background=white">
-
+        <div class="flex-item">
           <div id="slider-wrap">
-            <ul id="slider">
+            <ul id="slider" style="text-align: center;">
                 <li>
                     <a href="#" class="openMask">
-                      <img src=".\image\slideshow1.png" alt="명화1">
+                      <img src="./image/main/erromMain1.png" alt="청년이룸센터">
                     </a>
                 </li>
                 <li>
-                    <img src=".\image\slideshow2.png" alt="명화2">
+                    <img src="./image/main/slideshow2.png" alt="명화2">
                 </li>
             </ul>
             <div class="slider-btns" id="next"><span>▶</span></div>
             <div class="slider-btns" id="previous"><span>◀</span></div>
-            <div id="slider-pagination-wrap">
+            <div id="slider-pagination-wrap" style="text-align:right;">
               <ul>
 
               </ul>
@@ -220,16 +239,45 @@
 
         </div>
         <div class="flex-item">
-          <button type="button" name="button" style=background-color:skyblue
-            onclick="buttonClick(1)">이룸센터 찾아가기</button>
+          <button class="mainButton" type="button" name="button" onclick="buttonClick(1)"
+           style="background: url(./image/main/mainButton1.png) no-repeat; background-size: cover; position:relative">
+            <ul margin-left="10px">
+              <li class="mainText">청년이룸 방문하기</li>
+              <li>&nbsp;</li>
+              <li class="subText">
+                청년이룸이 어디에 있어요?
+                <img class="moveButtonImage" src="./image/main/moveButton2.png" alt="이동"
+                  style="position:absolute; right: 10px; bottom: 10px;">
+              </li>
+            </ul>
+          </button>
         </div>
         <div class="flex-item">
-          <button type="button" name="button"style=background-color:purple
-            onclick="buttonClick(2)">이룸센터 이용하기</button>
+          <button class="mainButton"  type="button" name="button" onclick="buttonClick(2)"
+            style="background: url(./image/main/mainButton2.png) no-repeat; background-size: cover; position:relative">
+            <ul margin-left="10px">
+              <li class="mainText">청년이룸 이용하기</li>
+              <li class="subText">
+                청년이룸에서 무엇을 할 수 있어요?
+                <img class="moveButtonImage" src="./image/main/moveButton2.png" alt="이동"
+                  style="position:absolute; right: 10px; bottom: 10px;">
+              </li>
+            </ul>
+          </button>
         </div>
         <div class="flex-item">
-          <button type="button" name="button"style=background-color:yellow
-            onclick="buttonClick(3)">주변 탐색하기</button>
+          <button class="mainButton"  type="button" name="button" onclick="buttonClick(3)"
+            style="background: url(./image/main/mainButton3.png) no-repeat; background-size: cover; position:relative">
+            <ul margin-left="10px">
+              <li class="mainText">청년이룸 주변보기</li>
+              <li>&nbsp;</li>
+              <li class="subText">
+                청년이룸 주변에는 무엇이 있어요?
+                <img class="moveButtonImage" src="./image/main/moveButton2.png" alt="이동"
+                  style="position:absolute; right: 10px; bottom: 10px;">
+              </li>
+            </ul>
+          </button>
         </div>
       </div>
 
@@ -247,6 +295,16 @@
       //var sliderWidth = slideWrapper.clientWidth;
       var imgList = document.querySelector('#slider-wrap ul#slider li');
       var sliderWidth = imgList.clientWidth;
+
+      let flexcontainer = document.querySelector('.flex-container ');
+      let flexItem = document.querySelector('.flex-container .flex-item:nth-child(4)');
+      let images = document.querySelectorAll('#slider-wrap ul#slider li img');
+      images.forEach((item, i) => {
+        images[i].style.height = flexcontainer.clientHeight - (flexItem.clientHeight * 3) - 40 + 'px';
+      });
+
+      let bottomCircle = document.querySelector('#slider-pagination-wrap');
+      bottomCircle.style.top = flexcontainer.clientHeight - (flexItem.clientHeight * 3) - 40 + 'px';
 
       //set width of items
       slides.forEach(function (element) {
@@ -318,7 +376,20 @@
       }, 3000);
     </script>
 
+    <!-- 홍보동영상 표시 -->
+    <div id="mask">
+      <iframe id="videoPlay" src="https://www.youtube.com/embed/ap7DmME5bOk?enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=1&mute=1"
+        title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="window">
+      <button type="button" href="#" class="close" value="닫기(.window .close)">
+        <img id="closeImage" src="./image/main/advertisementExit.png" alt="닫기">
+      </button>
+    </div>
+
     <script>
+      $("#mask").hide();
+
       var advertisementPlayCount = getParameter('adCount');
 
       function buttonClick(type) {
@@ -332,13 +403,13 @@
         else {
           switch (type) {
             case 1:
-              location.href='/MadeByJong/toEroom.html';
+              location.href='./toEroom.html';
               break;
             case 2:
-              location.href='/MadeByJong/useEroom.html';
+              location.href='./useEroom.html';
               break;
             case 3:
-              location.href='http://www.google.com';
+              location.href='./../map.html';
               break;
           }
         }
@@ -352,7 +423,7 @@
           //마스크의 높이와 너비를 화면 것으로 만들어 전체 화면을 채운다.
           $('#mask').css({'width':maskWidth,'height':maskHeight});
 
-          //애니메이션 효과 - 일단 1초동안 까맣게 됐다가 80% 불투명도로 간다.
+          //애니메이션 효과 - 일단 1초동안 까맣게 됐다가 100% 불투명도로 간다.
           $('#mask').fadeIn(1000);
           $('#mask').fadeTo("slow", 1);
 
@@ -367,8 +438,8 @@
             e.preventDefault();
             wrapWindowByMask();
 
-            let videoControl = document.getElementById('videoPlay');
-            videoControl.play();
+            $('#videoPlay')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+            $('#videoPlay')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
 
             advertisementPlayCount = 1;
         });
@@ -379,19 +450,10 @@
             e.preventDefault();
             $('#mask, .window').hide();
 
-            let videoControl = document.getElementById('videoPlay');
-            videoControl.pause();
-            videoControl.currentTime = 0;
+            $('#videoPlay')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
         });
     });
     </script>
-
-    <div id="mask">
-      <video id="videoPlay" width src=".\video\빅마마 - 하루만 더.mp4" controls></video>
-    </div>
-    <div class="window">
-      <button type="button" href="#" class="close" value="닫기(.window .close)">X</button>
-    </div>
 
   </body>
 </html>
