@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="./style.css?f"/>
     <script src="./script.js" type="text/javascript"></script>
 
@@ -32,27 +32,34 @@
         right:10px;
         z-index: 20;
       }
+
+      .navigator .brand {
+        position: absolute;
+        top:30px;
+        left:10px;
+        z-index: 20;
+      }
       /* --------------------------------------------------------- */
 
-      .top .background1
+      /* .top .background1
       {
         position: relative;
         width: 100vw;
         height: 186px;
         z-index: 10;
-      }
+      } */
 
       .top #mainTitle {
         position: absolute;
-        top: 130px;
-        left: 16px;
+        top: 80px;
+        left: 25px;
         z-index: 20;
       }
 
       .top #subTitle {
         position: absolute;
-        top: 205px;
-        left: 20px;
+        top: 150px;
+        left: 25px;
         z-index: 30;
       }
 
@@ -60,8 +67,8 @@
         position: absolute;
         width: 116px;
         height: 116px;
-        top: 130px;
-        right: 10px;
+        top: 100px;
+        right: 5px;
         z-index: 20;
       }
 
@@ -77,9 +84,9 @@
 
       .buttons .leftTop .mainCanvas {
         position: absolute;
-        width: 44.5vw;
-        height: 30vh;
-        top: 235px;
+        width: 45vw;
+        height: 34vh;
+        top: 190px;
         left: 10px;
         z-index: 30;
       }
@@ -87,8 +94,8 @@
       .buttons .leftTop .subCanvas {
         position: absolute;
         width: 43vw;
-        height: 23vh;
-        top: 235px;
+        height: 27vh;
+        top: 190px;
         left: 15px;
         z-index: 40;
       }
@@ -99,7 +106,7 @@
         width: 135px;
         color: white;
         font-size: 22px;
-        top: calc(24vh + 171px);
+        top: calc(28vh + 126px);
         left: 20px;
         z-index: 40;
       }
@@ -108,7 +115,7 @@
         position: absolute;
         width: 135px;
         color: black;
-        top: calc(24vh + 235px);
+        top: calc(28vh + 190px);
         left: 20px;
         z-index: 40;
       }
@@ -116,8 +123,8 @@
       .buttons .leftTop .movePage {
         position: absolute;
         width: 43vw;
-        height: 30vh;
-        top: 235px;
+        height: 34vh;
+        top: 190px;
         left: 15px;
         z-index: 50;
         opacity: 0;
@@ -126,9 +133,9 @@
 
       .buttons .rightTop .mainCanvas {
         position: absolute;
-        width: 44.5vw;
-        height: 30vh;
-        top: 235px;
+        width: 45vw;
+        height: 34vh;
+        top: 190px;
         left: 50%;
         margin-left: 10px;
         z-index: 30;
@@ -137,8 +144,8 @@
       .buttons .rightTop .subCanvas {
         position: absolute;
         width: 43vw;
-        height: 23vh;
-        top: 235px;
+        height: 27vh;
+        top: 190px;
         left: 50%;
         margin-left: 15px;
         z-index: 40;
@@ -150,7 +157,7 @@
         width: 155px;
         color: white;
         font-size: 22px;
-        top: calc(24vh + 171px);
+        top: calc(28vh + 126px);
         left: 50%;
         margin-left: 20px;
         z-index: 40;
@@ -160,7 +167,7 @@
         position: absolute;
         width: 155px;
         color: black;
-        top: calc(24vh + 235px);
+        top: calc(28vh + 190px);
         left: 50%;
         margin-left: 20px;
         z-index: 40;
@@ -169,8 +176,8 @@
       .buttons .rightTop .movePage {
         position: absolute;
         width: 43vw;
-        height: 30vh;
-        top: 235px;
+        height: 34vh;
+        top: 190px;
         left: 50%;
         margin-left: 15px;
         z-index: 50;
@@ -180,9 +187,9 @@
 
       .buttons .leftBottom .mainCanvas {
         position: absolute;
-        width: 44.5vw;
-        height: 30vh;
-        top: calc(30vh + 235px + 20px);
+        width: 45vw;
+        height: 34vh;
+        top: calc(34vh + 190px + 15px);
         left: 10px;
         z-index: 30;
       }
@@ -190,8 +197,8 @@
       .buttons .leftBottom .subCanvas {
         position: absolute;
         width: 43vw;
-        height: 23vh;
-        top: calc(30vh + 235px + 20px);
+        height: 27vh;
+        top: calc(34vh + 190px + 15px);
         left: 15px;
         z-index: 40;
       }
@@ -202,7 +209,7 @@
         width: 135px;
         color: white;
         font-size: 22px;
-        top: calc(30vh + 171px + 24vh + 20px);
+        top: calc(34vh + 126px + 28vh + 15px);
         left: 20px;
         z-index: 40;
       }
@@ -211,7 +218,7 @@
         position: absolute;
         width: 135px;
         color: black;
-        top: calc(30vh + 235px + 24vh + 20px);
+        top: calc(34vh + 190px + 28vh + 15px);
         left: 20px;
         z-index: 40;
       }
@@ -219,8 +226,8 @@
       .buttons .leftBottom .movePage {
         position: absolute;
         width: 43vw;
-        height: 30vh;
-        top: calc(30vh + 235px + 20px);
+        height: 34vh;
+        top: calc(34vh + 190px + 15px);
         left: 15px;
         z-index: 50;
         opacity: 0;
@@ -229,9 +236,9 @@
 
       .buttons .rightBottom .mainCanvas {
         position: absolute;
-        width: 44.5vw;
-        height: 30vh;
-        top: calc(30vh + 235px + 20px);
+        width: 45vw;
+        height: 34vh;
+        top: calc(34vh + 190px + 15px);
         left: 50%;
         margin-left: 10px;
         z-index: 30;
@@ -240,8 +247,8 @@
       .buttons .rightBottom .subCanvas {
         position: absolute;
         width: 43vw;
-        height: 23vh;
-        top: calc(30vh + 235px + 20px);
+        height: 27vh;
+        top: calc(34vh + 190px + 15px);
         left: 50%;
         margin-left: 15px;
         z-index: 40;
@@ -253,7 +260,7 @@
         width: 155px;
         color: white;
         font-size: 22px;
-        top: calc(30vh + 171px + 24vh + 20px);
+        top: calc(34vh + 126px + 28vh + 15px);
         left: 50%;
         margin-left: 20px;
         z-index: 40;
@@ -263,7 +270,7 @@
         position: absolute;
         width: 155px;
         color: black;
-        top: calc(30vh + 235px + 24vh + 20px);
+        top: calc(34vh + 190px + 28vh + 15px);
         left: 50%;
         margin-left: 20px;
         z-index: 40;
@@ -272,8 +279,8 @@
       .buttons .rightBottom .movePage {
         position: absolute;
         width: 43vw;
-        height: 30vh;
-        top: calc(30vh + 235px + 20px);
+        height: 34vh;
+        top: calc(34vh + 190px + 15px);
         left: 50%;
         margin-left: 15px;
         z-index: 50;
@@ -291,7 +298,7 @@
         }
 
         .buttons .leftTop .mainCanvas {
-          width: 222px;
+          width: 232px;
         }
 
         .buttons .leftTop .subCanvas {
@@ -299,7 +306,7 @@
         }
 
         .buttons .rightTop .mainCanvas {
-          width: 222px;
+          width: 232px;
         }
 
         .buttons .rightTop .subCanvas {
@@ -307,7 +314,7 @@
         }
 
         .buttons .leftBottom .mainCanvas {
-          width: 222px;
+          width: 232px;
         }
 
         .buttons .leftBottom .subCanvas {
@@ -315,7 +322,7 @@
         }
 
         .buttons .rightBottom .mainCanvas {
-          width: 222px;
+          width: 232px;
         }
 
         .buttons .rightBottom .subCanvas {
@@ -329,48 +336,53 @@
   <body>
     <div id="item-container" style="position:absolute; line-height: 0;">
       <div class="navigator">
-        <img class="navigation" src="./image/useEroom/navigationBar.png" alt="네비게이션">
+        <img class="navigation" src="./image/all/naviBackground.png" alt="네비게이션">
+        <img class="brand" src="./image/all/brand.png" alt="브랜드 로고" width="110px" height="27px">
         <a href="javascript:window.history.back();" style="z-index:50;">
-          <img class="backArrow" src="./image/useEroom/backArrow3.png" alt="뒤로가기" width="22px" height="22px">
+          <img class="backArrow" src="./image/all/backArrow3.png" alt="뒤로가기" width="22px" height="22px">
         </a>
       </div>
       <div class="top">
-        <img class="background1" src="./image/useEroom/useEroomBackground1.png" alt="배경1">
-        <img class="character" src="./image/useEroom/character.png" alt="캐릭터">
+        <!-- <img class="background1" src="./image/useEroom/useEroomBackground1.png" alt="배경1"> -->
+        <img class="character" src="./image/useEroom/character2.png" alt="캐릭터">
         <p class="mainText" id="mainTitle">청년이룸 이용하기</p>
         <p class="subText" id="subTitle">청년이룸에서 무엇을 할 수 있어요?</p>
-        <img class="subTitleBackground" src="./image/useEroom/subTilteBackground.png" alt="캐릭터">
+        <!-- <img class="subTitleBackground" src="./image/useEroom/subTilteBackground.png" alt="소분류 배경"> -->
       </div>
       <div class="buttons">
         <div class="leftTop">
           <img class="mainCanvas" src="./image/useEroom/buttonBackground2.png" alt="버튼 밑바탕">
-          <img class="subCanvas" src="./image/useEroom/buttonBackground1.png" alt="버튼 캔버스">
+          <img class="subCanvas" src="./image/useEroom/studyArea.png" alt="버튼 캔버스">
+          <img class="subCanvas" src="./image/useEroom/blur.png" alt="불투명 캔버스" style="z-index: 45;">
           <p class="mainText" id="mainTitle">공간 이룸 대여</p>
-          <p class="subText" id="subTitle">Text1</p>
+          <p class="subText" id="subTitle">쉬면서 공부하는 꿀맛</p>
           <button class="movePage" type="button" name="button" style=background-color:skyblue
           onclick="location.href='http://www.youtheroom.kr/bbs/board.php?tbl=bbs21&PHPSESSID=bb4fe7bbea246275836b1696d7682389'"></button>
         </div>
         <div class="rightTop">
           <img class="mainCanvas" src="./image/useEroom/buttonBackground2.png" alt="버튼 밑바탕">
-          <img class="subCanvas" src="./image/useEroom/buttonBackground1.png" alt="버튼 캔버스">
-          <p class="mainText" id="mainTitle">AR/VR 면접체험</p>
-          <p class="subText" id="subTitle">Text2</p>
+          <img class="subCanvas" src="./image/useEroom/arvr.png" alt="버튼 캔버스">
+          <img class="subCanvas" src="./image/useEroom/blur.png" alt="불투명 캔버스" style="z-index: 45;">
+          <p class="mainText" id="mainTitle">VR/AI 면접체험</p>
+          <p class="subText" id="subTitle">두근두근 모의면접</p>
           <button class="movePage" type="button" name="button" style=background-color:orange
           onclick="location.href='http://www.youtheroom.kr/product/item.php?ca_id=10&it_id=1618306845&status=&search='"></button>
         </div>
         <div class="leftBottom">
           <img class="mainCanvas" src="./image/useEroom/buttonBackground2.png" alt="버튼 밑바탕">
-          <img class="subCanvas" src="./image/useEroom/buttonBackground1.png" alt="버튼 캔버스">
+          <img class="subCanvas" src="./image/useEroom/program.png" alt="버튼 캔버스">
+          <img class="subCanvas" src="./image/useEroom/blur.png" alt="불투명 캔버스" style="z-index: 45;">
           <p class="mainText" id="mainTitle">프로그램 안내</p>
-          <p class="subText" id="subTitle">Text3</p>
+          <p class="subText" id="subTitle">오늘도 스펙업!</p>
           <button class="movePage" type="button" name="button" style=background-color:salmon
           onclick="location.href='http://www.youtheroom.kr/product/list.php?ca_id=10'"></button>
         </div>
         <div class="rightBottom">
           <img class="mainCanvas" src="./image/useEroom/buttonBackground2.png" alt="버튼 밑바탕">
           <img class="subCanvas" src="./image/useEroom/buttonBackground1.png" alt="버튼 캔버스">
-          <p class="mainText" id="mainTitle">까페 이용 안내</p>
-          <p class="subText" id="subTitle">Text4</p>
+          <img class="subCanvas" src="./image/useEroom/blur.png" alt="불투명 캔버스" style="z-index: 45;">
+          <p class="mainText" id="mainTitle">카페 이용 안내</p>
+          <p class="subText" id="subTitle">얼죽아 모여라</p>
           <button class="movePage" type="button" name="button" style=background-color:green
           onclick="location.href='./infoEroom.html'"></button>
         </div>

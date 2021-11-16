@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="./style.css"/>
     <script src="./script.js" type="text/javascript"></script>
 
@@ -22,9 +22,16 @@
         right:10px;
         z-index: 20;
       }
+
+      .navigator .brand {
+        position: absolute;
+        top:30px;
+        left:10px;
+        z-index: 20;
+      }
       /* --------------------------------------------------------- */
 
-      .middle .background1 {
+      /* .middle .background1 {
         position: absolute;
         top: 64px;
         width: 100vw;
@@ -70,20 +77,20 @@
         left: 50%;
         margin-left: -140px;
         z-index: 30;
-      }
+      } */
       /* --------------------------------------------------------- */
 
       .slideBackground .background1 {
         position: absolute;
         width: 70vw;
-        height: 400px;
+        height: 430px;
         top:50vh;
         margin-top: -220px;
         margin-left: 15vw;
         z-index: 40;
       }
 
-      .slideBackground .background2 {
+      /* .slideBackground .background2 {
         position: absolute;
         width: 68vw;
         height: 350px;
@@ -101,24 +108,24 @@
         margin-top: -220px;
         margin-left: 16vw;
         z-index: 60;
-      }
+      } */
 
       .slideBackground #topTitle {
         position: absolute;
         font-size: 22px;
         font-family: notoSans-Bold;
-        color: white;
+        color: #70BDB8;
         width: 250px;
         height: 20px;
         top: 50vh;
         margin-top: -210px;
         left: 50%;
-        margin-left: -115px;
+        margin-left: -125px;
         text-align: center;
         z-index: 70;
       }
 
-      .slideBackground #bottomTitle {
+      /* .slideBackground #bottomTitle {
         position: absolute;
         font-size: 20px;
         color: black;
@@ -142,6 +149,16 @@
         margin-left: 80px;
         z-index: 110;
       }
+
+      .slideBackground #buttonExportGray {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: 50vh;
+        margin-top: 143px;
+        left: 50%;
+        margin-left: 80px;
+      } */
       /* --------------------------------------------------------- */
     </style>
 
@@ -251,7 +268,7 @@
 
       #slider-pagination-wrap {
           min-width: 20px;
-          margin-top: 370px;
+          margin-top: 400px;
           margin-left: auto;
           margin-right: auto;
           height: 15px;
@@ -305,7 +322,7 @@
         width: 500px;
       }
 
-      .middle .background1 {
+      /* .middle .background1 {
         width: 500px;
       }
 
@@ -316,14 +333,14 @@
       .middle .background3 {
         width: 460px;
         margin-left: 20px;
-      }
+      } */
 
      .slideBackground .background1 {
         width: 360px;
         margin-left: 70px;
       }
 
-      .slideBackground .background2 {
+      /* .slideBackground .background2 {
         width: 350px;
         margin-left: 75px;
       }
@@ -331,7 +348,7 @@
       .slideBackground .background3 {
         width: 350px;
         margin-left: 75px;
-      }
+      } */
 
       .flex-container {
         width: 350px;
@@ -353,26 +370,28 @@
   <body>
     <div id="item-container" style="position:absolute; line-height: 0;">
       <div class="navigator">
-        <img class="navigation" src="./image/innerOutter/navigationBar.png" alt="네비게이션">
+        <img class="navigation" src="./image/all/naviBackground.png" alt="네비게이션">
+        <img class="brand" src="./image/all/brand.png" alt="브랜드 로고" width="110px" height="27px">
         <a href="javascript:window.history.back();" style="z-index:50;">
-          <img class="backArrow" src="./image/innerOutter/backArrow3.png" alt="뒤로가기" width="22px" height="22px">
+          <img class="backArrow" src="./image/all/backArrow3.png" alt="뒤로가기" width="22px" height="22px">
         </a>
       </div>
-      <div class="middle">
+      <!-- <div class="middle">
         <img class="background1" src="./image/innerOutter/background1.png" alt="밑바탕">
         <img class="background2" src="./image/innerOutter/background2.png" alt="차상위 바탕">
         <img class="background3" src="./image/innerOutter/background3.png" alt="상위 바탕">
         <p class="subText" id="callTitle">청년이룸 문의 전화 070-4913-4137</p>
         <a href="tel:070-4913-4137"><img class="call" src="./image/innerOutter/call.png" alt="전화기"></a>
-      </div>
+      </div> -->
       <div class="slideBackground">
         <img class="background1" src="./image/innerOutter/slideBackground1.png" alt="슬라이드 밑바탕">
-        <img class="background2" src="./image/innerOutter/slideBackground2.png" alt="슬라이드 차상위 바탕">
-        <img class="background3" src="./image/innerOutter/slideBackground3.png" alt="슬라이드 상위 바탕">
+        <!-- <img class="background2" src="./image/innerOutter/slideBackground2.png" alt="슬라이드 차상위 바탕">
+        <img class="background3" src="./image/innerOutter/slideBackground3.png" alt="슬라이드 상위 바탕"> -->
         <p class="mainText" id="topTitle">천왕역 안에서 찾아가기</p>
-        <p class="subText" id="bottomTitle">청년이룸 주소</p>
-        <button id="bottomExport" type="button" name="button" onclick="copyAddressText('서울 구로구 오리로 1130 지하1층')"
-          style="background: url(./image/toEroom/middleBottomExport2.png) no-repeat; background-size: cover;"></button>
+        <!-- <p class="subText" id="bottomTitle">청년이룸 주소</p>
+        <button id="bottomExport" type="button" name="button" onclick="addressButtonClick()"
+          style="background: url(./image/innerOutter/middleBottomExport2.png) no-repeat; background-size: cover;"></button>
+        <img id="buttonExportGray" src="./image/innerOutter/middleBottomExport2_gray.png" alt="버튼 가리기">; -->
       </div>
     </div>
 
@@ -382,42 +401,42 @@
           <ul id="slider">
             <li>
               <img src="./image/innerOutter/inner/1.jpg" alt="안에서1">
-              <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+              <p>&nbsp;</p>
               <p class="subText" id="slideText">1) 7호선 천왕역입니다. 청년이룸은 천왕역 안에 위치해 있습니다.</p>
             </li>
             <li>
               <img src="./image/innerOutter/inner/2.jpg" alt="안에서2">
-              <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+              <p>&nbsp;</p>
               <p class="subText" id="slideText">2) 개찰구를 지나 4번 출구를 찾아 걸어가시면 계단을 보실 수 있습니다.</p>
             </li>
             <li>
               <img src="./image/innerOutter/inner/3.jpg" alt="안에서3">
-              <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+              <p>&nbsp;</p>
               <p class="subText" id="slideText">3) 계단을 오릅니다.</p>
             </li>
             <li>
               <img src="./image/innerOutter/inner/4.jpg" alt="안에서4">
-              <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+              <p>&nbsp;</p>
               <p class="subText" id="slideText">4) 왼쪽 통로의 계단을 올라 50m를 직진하시면 됩니다.</p>
             </li>
             <li>
               <img src="./image/innerOutter/inner/5.jpg" alt="안에서5">
-              <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+              <p>&nbsp;</p>
               <p class="subText" id="slideText">5) 통로 끝에서 왼쪽으로 가시면 3개의 기둥을 지나칩니다.</p>
             </li>
             <li>
               <img src="./image/innerOutter/inner/6.jpg" alt="안에서6">
-              <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+              <p>&nbsp;</p>
               <p class="subText" id="slideText">6) 이 투명 유리문을 통해 들어오시면 됩니다.</p>
             </li>
             <li>
               <img src="./image/innerOutter/inner/7.jpg" alt="안에서7">
-              <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+              <p>&nbsp;</p>
               <p class="subText" id="slideText">7) 앞으로 쭉 걸어갑니다.</p>
             </li>
             <li>
               <img src="./image/innerOutter/inner/8.jpg" alt="안에서8">
-              <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+              <p>&nbsp;</p>
               <p class="subText" id="slideText">8) 청년이룸 입구입니다. QR체크인과 발열 체크 후 들어오시면 됩니다.</p>
             </li>
           </ul>
@@ -509,6 +528,16 @@
           dots[slideIndex].classList.add('active');
       }
       pagination();
+
+      //청년이룸 주소 버튼 클릭
+      function addressButtonClick() {
+        copyAddressText('서울 구로구 오리로 1130 지하1층');
+
+        let grayImage = document.getElementById('buttonExportGray');
+        grayImage.style.zIndex = 120;
+
+        setTimeout(function() { grayImage.style.zIndex = 0; }, 200);
+      }
     </script>
   </body>
 </html>
