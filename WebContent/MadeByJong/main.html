@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css?c"/>
+    <link rel="stylesheet" href="./style.css?q"/>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="./script.js" type="text/javascript"></script>
 
@@ -190,19 +190,21 @@
         line-height: 0;
       }
 
-      @media (min-width:1024px) {
+      @media (min-width:500px) {
         #videoPlay {
-          width: 800px;
-          height: 600px;
-          margin-left: calc(50% - 400px);
+          position: absolute;
+          width: 500px;
+          height: auto;
+          left: 50%;
+          margin-left: calc(50% - 250px);
         }
 
         #slider-wrap {
-          width: 1024px;
+          width: 500px;
         }
 
         #slider-wrap ul#slider li img {
-          width: 984px;
+          width: 460px;
           padding-left: 20px;
           padding-right: 20px;
         }

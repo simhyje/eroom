@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background-color: white;
 }
 
 .flex-container{
@@ -68,9 +69,19 @@ button {
   vertical-align: middle;
 }
 
-@media (min-width:1024px) {
+#item-container {
+  width: 95vw;
+  height: 98vh;
+}
+
+@media (min-width:500px) {
   .flex-container {
-    width:1024px;
-    margin-left: calc(50% - 512px);
+    width:500px;
+    margin-left: calc(50% - 250px);
+  }
+
+  #item-container {
+    width: 500px;
+    margin-left: calc(50% - 250px);
   }
 }
