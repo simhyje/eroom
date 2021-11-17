@@ -3,8 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-584RBDQ');</script>
+<!-- End Google Tag Manager -->
 <title>이루미 길잡이</title>
 <style>
+
+.cLayer{
+    floot: left;
+    padding : 1.0em;
+}
+@media screen and (min-width:500px){
+
+    .cLayer{
+        padding: 6.0em;
+    }
+ 
+}
+
+
+
 .table ul li{
 	list-style:none;
 	text-align:center;
@@ -16,7 +39,14 @@
 	line-height: 40px;
 	display: table-cell;
 	width:160px;
+}
+
+#foodlist{
 	background-color:#8DC9C2;
+	
+}
+#cafelist{
+	background-color:#EE6B56;
 	
 }
 .container{
@@ -80,9 +110,6 @@ background-color:#FFFFFF;
 font-color:black;
 }
 .table .cafelist{
-background-color:width:220px;
-}
-.table .cafelist{
 width:200px;
 background-color:#FFFFFF;
 }
@@ -114,115 +141,173 @@ color:#585858; text-decoration:none;
 .info{
 font-size:13px;
 }
+a.cafelist:link{
+font-size:16px; 
+text-decoration:none;
+color:#2E2E2E;
+}
+a.cafelist:active {
+color:#000000; 
+text-decoration:none;
+}
+a.cafelist:visited {
+color:#585858; text-decoration:none;
+}
+.info{
+font-size:13px;
+background-color:#ffffff;
+border-radius:10px;
+border-style:solid;
+border-width:0.1px;
+border-color:#5EA4B8;
+font-weight:bold;
+color:#406D7F;
+opacity:0.9;
+padding:0px 6px 2px 6px;
+margin:15px 0px 2px 0px;
+}
+.info-c{
+font-size:13px;
+background-color:#ffffff;
+border-radius: 25px;
+border-style:solid;
+border-width:0.1px;
+border-color:#FF9E7C;
+font-weight:bold;
+color:#EE6B56;
+padding:0px 6px 2px 6px;
+margin:15px 0px 2px 0px;
+}
+.center{
+font-size:17px;
+background-color:#ffffff;
+border-radius: 10px;
+border-style:solid;
+border-width:0.1px;
+border-color:#1C4060;
+color:#1C4060;
+opacity:0.9;
+padding:0px 10px 0px 10px;
+margin-left:7px;
+font-weight:bold;
+}
+.food{
+background-color:#5EA4B8;
+}
+.cafe{
+background-color:#EE6B56;
 
 
-
-
+}
 
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-584RBDQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 	<div class="container">
 	<div><img class="back" src="./image/navi.png"></div>	
 	<div id="mapwrap">
-		<div id="map" style="width: 350px; height: 450px;"></div>
+		<div id="map"  style="width: 350px; height:400px;"></div>
 		<!-- 지도 위에 표시될 마커 카테고리 -->
 		<div class="category">
 			<ul>
-				<li onclick="changeMarker('food')">
-				<img src="./image/foodlist.svg" id="foodMenu"></li>
+ 			 	<li onclick="changeMarker('food')">
+				<a href="#"><img src="./image/foodlist2.svg" id="foodMenu"></a></li>
 				<li id="cafeMenu" onclick="changeMarker('cafe')">
-				<img src="./image/cafelist.svg"></li>
-			</ul>
+				<a href="#"><img src="./image/cafelist2.svg"></a></li> 
+			</ul> 
 		</div>
 	</div>
 	<div class="table">
 		<div id="foodlist">
-		<ul>
+		<ul class="food">
 			<li class="foodlist" onclick="panTo(0)"><a href="#" class="foodlist">천왕짬뽕</a></li>
-			<li><a href="http://naver.me/xHkJSmDU" target="_blank">상세페이지 더보기</a></li>
+			<li class="food"><a href="http://naver.me/xHkJSmDU" target="_blank">상세페이지 더보기</a></li>
 		</ul>
 		<ul>			
 			<li class="foodlist" onclick="panTo(1)"><a href="#" class="foodlist">병천순대 </a></li>
-			<li><a href="http://naver.me/x9J5FRyB" target="_blank">상세페이지 더보기</a></li>
+			<li class="food"><a href="http://naver.me/x9J5FRyB" target="_blank">상세페이지 더보기</a></li>
 		</ul>
 		<ul>
-			<li class="foodlist" onclick="panTo(2)"><a href="#" class="foodlist">카츠랑천왕점</a></li>
-			<li><a href="http://naver.me/xWowKzhy" target="_blank">상세페이지 더보기</a></li>
+			<li class="foodlist" onclick="panTo(2)"><a href="#" class="foodlist">카츠랑</a></li>
+			<li class="food"><a href="http://naver.me/xWowKzhy" target="_blank">상세페이지 더보기</a></li>
 		</ul>
 		<ul>
 			<li class="foodlist" onclick="panTo(3)"><a href="#" class="foodlist">돈우네정육식당</a></li>
-			<li><a href="http://naver.me/IImsR8P3" target="_blank">상세페이지 더보기</a></li>
+			<li class="food"><a href="http://naver.me/IImsR8P3" target="_blank">상세페이지 더보기</a></li>
 		</ul>
 		<ul>
 			<li class="foodlist" onclick="panTo(4)"><a href="#" class="foodlist">식탐</a></li> 
-			<li><a href="http://naver.me/5PJ7urg5" target="_blank">상세페이지 더보기</a></li>
+			<li class="food"><a href="http://naver.me/5PJ7urg5" target="_blank">상세페이지 더보기</a></li>
 		</ul>
 		<ul>	
 			<li class="foodlist" onclick="panTo(5)"><a href="#" class="foodlist">해밀</a></li>
-			<li><a href="http://naver.me/FiW8GhLV" target="_blank">상세페이지 더보기</a></li>
+			<li class="food"><a href="http://naver.me/FiW8GhLV" target="_blank">상세페이지 더보기</a></li>
 		</ul>
 		<ul>
-			<li class="foodlist" onclick="panTo(6)"><a href="#" class="foodlist">국수나무 천왕점 </a></li>
-			<li><a href="http://naver.me/GUL6tWvr" target="_blank">상세페이지 더보기</a></li>
+			<li class="foodlist" onclick="panTo(6)"><a href="#" class="foodlist">국수나무</a></li>
+			<li class="food"><a href="http://naver.me/GUL6tWvr" target="_blank">상세페이지 더보기</a></li>
 		</ul>
 		<ul>
 			<li class="foodlist" onclick="panTo(7)"><a href="#" class="foodlist">시키스시</a></li>
-			<li><a href="http://naver.me/5qPba5Fa" target="_blank">상세페이지 더보기</a></li>
+			<li class="food"><a href="http://naver.me/5qPba5Fa" target="_blank">상세페이지 더보기</a></li>
 		</ul>
 		<ul>
-			<li class="foodlist" onclick="panTo(8)"><a href="#" class="foodlist">롯데리아 천왕역점</a></li>
-			<li><a href="http://naver.me/GW5SJEZg" target="_blank">상세페이지 더보기</a></li>
+			<li class="foodlist" onclick="panTo(8)"><a href="#" class="foodlist">롯데리아</a></li>
+			<li class="food"><a href="http://naver.me/GW5SJEZg" target="_blank">상세페이지 더보기</a></li>
 		</ul>
 		<ul>
-			<li class="foodlist" onclick="panTo(9)"><a href="#" class="foodlist">사생활 </a></li>
-			<li><a href="http://naver.me/IgT0F6ew" target="_blank">상세페이지 더보기</a></li>
+			<li class="foodlist" onclick="panTo(9)"><a href="#" class="foodlist">사생활</a></li>
+			<li class="food"><a href="http://naver.me/IgT0F6ew" target="_blank">상세페이지 더보기</a></li>
 		</ul>
 		<ul>
-			<li class="foodlist" onclick="panTo(10)"><a href="#" class="foodlist">핑거존 브런치카페 </a></li>
-			<li><a href="http://naver.me/xAt4jXk2" target="_blank">상세페이지 더보기</a></li>
+			<li class="foodlist" onclick="panTo(10)"><a href="#" class="foodlist">핑거존</a></li>
+			<li class="food"><a href="http://naver.me/xAt4jXk2" target="_blank">상세페이지 더보기</a></li>
 		</ul>
 		</div>
 		<div id="cafelist">
 		<ul>
 			<li class="cafelist" onclick="panTo2(0)"><a href="#" class="cafelist">메이로드</a></li>
-			<li> <a href="http://naver.me/xZx5bUWg" target="_blank">상세페이지 더보기</a></li>
+			<li class="cafe"><a href="http://naver.me/xZx5bUWg" target="_blank">상세페이지 더보기</a></li>
 		</ul>
 		<ul>	
-			<li class="cafelist" onclick="panTo2(1)"><a href="#" class="cafelist">감성카페 </a></li>
-			<li><a href="http://naver.me/FMAkFyVz" target="_blank">상세페이지 더보기</a></li>
+			<li class="cafelist" onclick="panTo2(1)"><a href="#" class="cafelist">감성카페</a></li>
+			<li class="cafe"><a href="http://naver.me/FMAkFyVz" target="_blank">상세페이지 더보기</a></li>
 		</ul>
 		<ul>
 			<li class="cafelist" onclick="panTo2(2)"><a href="#" class="cafelist">사생활</a></li>
-			<li><a href="http://naver.me/IgT0F6ew" target="_blank">상세페이지 더보기</a></li>
+			<li class="cafe"><a href="http://naver.me/IgT0F6ew" target="_blank">상세페이지 더보기</a></li>
 		</ul>
 		<ul>
-			<li class="cafelist" onclick="panTo2(3)"><a href="#" class="cafelist">핑거존 브런치카페</a></li>
-			<li><a href="http://naver.me/xAt4jXk2" target="_blank">상세페이지 더보기</a></li>
+			<li class="cafelist" onclick="panTo2(3)"><a href="#" class="cafelist">핑거존</a></li>
+			<li class="cafe"><a href="http://naver.me/xAt4jXk2" target="_blank">상세페이지 더보기</a></li>
 		</ul>
 		<ul>
 			<li class="cafelist" onclick="panTo2(4)"><a href="#" class="cafelist">12NOI</a></li>
-			<li><a href="http://naver.me/GaMW2Gr1" target="_blank">상세페이지 더보기</a></li>
+			<li class="cafe"><a href="http://naver.me/GaMW2Gr1" target="_blank">상세페이지 더보기</a></li>
 		</ul>
 		<ul>	
-			<li class="cafelist" onclick="panTo2(5)"><a href="#" class="cafelist">빽다방 천왕역점</a></li>
-			<li><a href="http://naver.me/5ZRBYgBY" target="_blank">상세페이지 더보기</a></li>
+			<li class="cafelist" onclick="panTo2(5)"><a href="#" class="cafelist">빽다방</a></li>
+			<li class="cafe"><a href="http://naver.me/5ZRBYgBY" target="_blank">상세페이지 더보기</a></li>
 		</ul>
 		<ul>	
 			<li class="cafelist" onclick="panTo2(6)"><a href="#" class="cafelist">카페더빛</a></li>
-			<li><a href="http://naver.me/xuvNiRes" target="_blank">상세페이지 더보기</a></li>
+			<li class="cafe"><a href="http://naver.me/xuvNiRes" target="_blank">상세페이지 더보기</a></li>
 		</ul>
 		<ul>
 			<li class="cafelist" onclick="panTo2(7)"><a href="#" class="cafelist">카페트렌디</a></li>
-			<li><a href="http://naver.me/5bXhMUSm" target="_blank">상세페이지 더보기</a></li>
+			<li class="cafe"><a href="http://naver.me/5bXhMUSm" target="_blank">상세페이지 더보기</a></li>
 		</ul>
 		<ul>
 			<li class="cafelist" onclick="panTo2(8)"><a href="#" class="cafelist">달보드레</a></li>
-			<li><a href="http://naver.me/xuIhtPDY" target="_blank">상세페이지 더보기</a></li>
+			<li class="cafe"><a href="http://naver.me/xuIhtPDY" target="_blank">상세페이지 더보기</a></li>
 		</ul>
 		<ul>	
-			<li class="cafelist" onclick="panTo2(9)"><a href="#" class="cafelist">좋은날 </a></li>
-			<li><a href="http://naver.me/xGKLxJuR" target="_blank">상세페이지 더보기</a></li>
+			<li class="cafelist" onclick="panTo2(9)"><a href="#" class="cafelist">좋은날</a></li>
+			<li class="cafe"><a href="http://naver.me/xGKLxJuR" target="_blank">상세페이지 더보기</a></li>
 		</ul>
 		</div>
 	</div>
@@ -269,14 +354,18 @@ font-size:13px;
  		let customOverlay = new kakao.maps.CustomOverlay({
  			image: markerImage,
  			position : markerPosition,
-			content : content
+			content : content,
+			zIndex:1,
+			xAnchor :0.5,
+			yAnchor :0
+			
 		}); 
 
 		//커스텀 오버레이를 지도에 표시합니다
 		customOverlay.setMap(map);
  		
-		//마커 배열
-		let foodPositions = [
+	 	//마커 배열
+ 		let foodPositions = [
 		new kakao.maps.LatLng(37.486014, 126.838562), //천왕짬뽕
 		new kakao.maps.LatLng(37.488596824, 126.839564751923),//병천순대
 		new kakao.maps.LatLng(37.486338, 126.839417),//카츠랑
@@ -309,10 +398,10 @@ font-size:13px;
 			content : '<div class="info">병천순대</div>',
 			latlng : new kakao.maps.LatLng(37.488596824, 126.839564751923)
 		}, {
-			content : '<div class="info" style="width:100%;">카츠랑 천왕점</div>',
+			content : '<div class="info">카츠랑</div>',
 			latlng : new kakao.maps.LatLng(37.4861761837, 126.839502313468)
 		}, {
-			content : '<div style="width:100%;" class="info">돈우네정육식당</div>',
+			content : '<div class="info" style="margin-left:35px;magin-bottom:10px;">돈우네</div>',
 			latlng : new kakao.maps.LatLng(37.487582, 126.839170)
 		}, {
 			content : '<div class="info">식탐</div>',
@@ -321,19 +410,19 @@ font-size:13px;
 			content : '<div class="info">해밀</div>',
 			latlng : new kakao.maps.LatLng(37.4883180401519, 126.837577318156)
 		}, {
-			content : '<div class="info">국수나무 천왕점</div>',
+			content : '<div class="info">국수나무</div>',
 			latlng : new kakao.maps.LatLng(37.4812206902152, 126.839008321337)
 		}, {
-			content : '<div class="info">시키스시</div>',
+			content : '<div class="info" style="margin-right:30px;">시키스시</div>',
 			latlng : new kakao.maps.LatLng(37.4875691857332, 126.838807227175)
 		}, {
-			content : '<div style="width:100%;" class="info">롯데리아 천왕역점</div>',
+			content : '<div class="info">롯데리아</div>',
 			latlng : new kakao.maps.LatLng(37.4866023608152, 126.83824746314)
 		}, {
 			content : '<div class="info">사생활</div>',
 			latlng : new kakao.maps.LatLng(37.4912054930086, 126.842026722372)
 		}, {
-			content : '<div class="info">핑거존 브런치카페</div>',
+			content : '<div class="info">핑거존</div>',
 			latlng : new kakao.maps.LatLng(37.4811198515805, 126.839725683889)
 		}];
 	
@@ -347,13 +436,13 @@ font-size:13px;
 			content : '<div class="info-c">사생활</div>',
 			latlng : new kakao.maps.LatLng(37.4912054930086, 126.842026722372)
 		}, {
-			content : '<div class="info-c">핑거존 브런치카페</div>',
+			content : '<div class="info-c">핑거존</div>',
 			latlng : new kakao.maps.LatLng(37.4811198515805, 126.839725683889)
 		},  {
 			content : '<div class="info-c">12NOI</div>',
 			latlng : new kakao.maps.LatLng(37.4868057214022, 126.831607577409)
 		}, {
-			content : '<div class="info-c">빽다방 천왕역점</div>',
+			content : '<div class="info-c">빽다방</div>',
 			latlng : new kakao.maps.LatLng(37.4866023608152, 126.83824746314)
 		}, {
 			content : '<div class="info-c">카페더빛</div>',
@@ -369,9 +458,10 @@ font-size:13px;
 			latlng : new kakao.maps.LatLng(37.489916, 126.837656)
 		}];
 
-		let markerImageSrc = './image/foodMarker.svg'; // 마커이미지의 주소입니다. 스프라이트 이미지 입니다
-		let markerImageSrc2 = './image/cafeMarker.svg'; // 마커이미지의 주소입니다. 스프라이트 이미지 입니다
+		let markerImageSrc = './image/foodMarker2.svg'; // 마커이미지의 주소입니다. 스프라이트 이미지 입니다
+		let markerImageSrc2 = './image/cafeMarker2.svg'; // 마커이미지의 주소입니다. 스프라이트 이미지 입니다
 		foodMarkers = [], cafeMarkers = [];
+		foodOverlay=[]; cafeOverlay=[];
 
 		createfoodMarkers();
 		createcafeMarkers();
@@ -398,9 +488,8 @@ font-size:13px;
 		
 		//음식점 마커 
 		function createfoodMarkers() {
-		let infowindow;
 		let marker2 = new Array();
-			
+		let overlay = new Array();
 			for (let i = 0; i < foodPositions.length; i++) {
 				let imageSize = new kakao.maps.Size(50, 40),
 	            imageOptions = {  
@@ -408,45 +497,29 @@ font-size:13px;
 	                spriteSize: new kakao.maps.Size(50,40)  
 	            };     
 						
-	        // 마커이미지와 마커를 생성합니다
+	         // 마커이미지와 마커를 생성합니다
 	        let markerImage = createMarkerImage(markerImageSrc, imageSize, imageOptions);    
 	           
-	        
-	        	marker2[i] = new kakao.maps.Marker({
+	        	marker2[i]= new kakao.maps.Marker({
 	        	image: markerImage,
-	            position: foodPositions[i] // 마커의 위치
+	            position: foodPositions[i],
+	            zIndex:1,
+	            opacity :1,
+				xAnchor :0.6,
+				yAnchor :1// 마커의 위치
 	        });
 	        
-
-	        foodMarkers.push(marker2[i]);
-	        
-	        // 마커에 표시할 인포윈도우를 생성합니다 
-	       infowindow = new kakao.maps.InfoWindow({
-	        	//content: fpositions[i].content, // 인포윈도우에 표시할 내용
-	            removable : true,
-	        	zIndex:1
-	        })
-	        
- 	        // 마커에 클릭이벤트를 등록합니다
-	        kakao.maps.event.addListener(marker2[i], 'click', function() {
-	        	infowindow.setContent(fpositions[i].content);
-	            infowindow.open(map, marker2[i]); 
-	        });
-	  		$('.foodlist').on("click",function(){
-	  			infowindow.setContent(fpositions[i].content);
-	  			infowindow.close(map, marker2[i]);
-	  		})
-	  		$('.cafelist').on("click",function(){
-	  			infowindow.close(map, marker2[i]);
-	  			 
-	  		})
-	  		infowindow.close(map, marker2[i]);
-			}
-			function windowRemove(){
-				infowindow.close(map, marker2[i]);
+	        foodMarkers.push(marker2[i]); 
+		
 				
-			}
-			
+		 	 overlay[i] = new kakao.maps.CustomOverlay({
+			            content: fpositions[i].content,
+			            map: map,
+			            position: foodPositions[i]      
+			  		}) 
+		 	foodOverlay.push(overlay[i])
+				}	
+	     
 		}
 		
 		
@@ -454,13 +527,17 @@ font-size:13px;
 		function setfoodMarkers(map) {
 			for (let i = 0; i < foodMarkers.length; i++) {				
 				foodMarkers[i].setMap(map);
-	
 			}
 		}
-
+		function removefoodover(map){
+			for (let i = 0; i < foodMarkers.length; i++) {				
+				foodOverlay[i].setMap(map);
+			}
+			
+		}
 		//카페 마커를 생성하고 카페 마커 배열에 추가하는 함수입니다
 		function createcafeMarkers() {
-			//let infowindow;
+			let overlay = new Array();
 			let marker2 = new Array();
 			for (let i = 0; i < cafePositions.length; i++) {
 				
@@ -477,50 +554,43 @@ font-size:13px;
 	        	image: markerImage,
 	            position: cafePositions[i] // 마커의 위치
 	        });
-		            
-		  		$('.foodlist').on("click",function(){
-		  			infowindow.close(map, marker2[i]);
-		  		})
-		  		$('.cafelist').on("click",function(){
-		  			infowindow.close(map, marker2[i]);
-		  			 
-		  		})
-		            // 생성된 마커를 카페 마커 배열에 추가합니다
 				cafeMarkers.push(marker2[i]);
-		        
-		        // 마커에 표시할 인포윈도우를 생성합니다 
-		       infowindow = new kakao.maps.InfoWindow({
-		        	//content: fpositions[i].content, // 인포윈도우에 표시할 내용
-		            removable : true,
-		        	zIndex:1
-		        })
-		        
-	 	        // 마커에 클릭이벤트를 등록합니다
-		        kakao.maps.event.addListener(marker2[i], 'click', function() {
-		        	infowindow.setContent(cpositions[i].content);
-		            infowindow.open(map, marker2[i]); 
-		        });
-		        infowindow.close();
-		  		$('.foodlist').on("click",function(){
-		  			infowindow.close(map,  marker2[i]);
-		  		
-		  		})	
-		        
-			}
+ 		         // 생성된 마커를 카페 마커 배열에 추가합니다
+			 	 overlay[i] = new kakao.maps.CustomOverlay({
+			            content: cpositions[i].content,
+			            map: map,
+			            position: cafePositions[i]      
+			  		}) 
+		 			cafeOverlay.push(overlay[i])
+				}	 
+ 		         
+		         
+			
 		}
-
+				   
+		 
 		//카페 마커들의 지도 표시 여부를 설정하는 함수입니다
 		function setcafeMarkers(map) {
 			for (let i = 0; i < cafeMarkers.length; i++) {
 				cafeMarkers[i].setMap(map);
 			}
 		}
+		
+		function removecafeover(map){
+			for (let i = 0; i < cafeMarkers.length; i++) {				
+				cafeOverlay[i].setMap(map);
+			}
+				
+		}
+			
+			
+		
 
 		function changeMarker(type) {
 
 			let foodMenu = document.getElementById('foodMenu');
 			let cafeMenu = document.getElementById('cafeMenu');
-			let infoWindow;
+		
 			// 커피숍 카테고리가 클릭됐을 때
 			if (type === 'food') {
 				
@@ -531,10 +601,14 @@ font-size:13px;
 				// 커피숍 마커들만 지도에 표시하도록 설정합니다
 				setfoodMarkers(map);
 				setcafeMarkers(null);
+				removefoodover(map);
+				removecafeover(null);
 				document.getElementById("foodlist").style.display = "block";
 				document.getElementById("cafelist").style.display = "none";
-				//let foodlist = document.getElementsByClassName('foodlist');
-
+			    let moveLatLon = new kakao.maps.LatLng(37.48510764982259, 126.84015155423077);
+			    map.panTo(moveLatLon); 
+				
+				
 			} else if (type === 'cafe') { // 편의점 카테고리가 클릭됐을 때
 				
 				// 편의점 카테고리를 선택된 스타일로 변경하고
@@ -544,9 +618,19 @@ font-size:13px;
 				// 편의점 마커들만 지도에 표시하도록 설정합니다
 				setfoodMarkers(null);
 				setcafeMarkers(map);
+				removecafeover(map);
+				removefoodover(null);
 				document.getElementById("foodlist").style.display = "none";
 				document.getElementById("cafelist").style.display = "block";
+				   
+				let moveLatLon = new kakao.maps.LatLng(37.48510764982259, 126.84015155423077);
+				map.panTo(moveLatLon); 
+				
+				
+				
 			}
+			
+			
 		}		
 	 
 		function panTo(value) {
@@ -556,62 +640,22 @@ font-size:13px;
 					
 		    let moveLatLon = new kakao.maps.LatLng(Lat, Lng);
 		    map.panTo(moveLatLon);            
-			
-		    let marker = new kakao.maps.Marker({
-		            position: moveLatLon // 마커의 위치
-		        });
-		        
-	
-		        // 마커에 표시할 인포윈도우를 생성합니다 
-		         infowindow = new kakao.maps.InfoWindow({
-		        	position:moveLatLon,
-		        	map:map,
-		        	content: fpositions[value].content, // 인포윈도우에 표시할 내용
-		            removable : true
-		        	//zIndex:1
-		        })
-		            infowindow.open(map, marker); 
-		        
-		  		$('.foodlist').on("click",function(){
-		  			infowindow.close(map, marker);
-		  			
-		  		})	
-		  		$('.cafeMenu').on("click",function(){
-		  			
-		  			infowindow.close(map, marker);
-		  		})
-		  		infowindow.close(map, marker);
 
 		}
 		function panTo2(value) {
 		
-			
-		  let Lat=cafePositions[value].getLat();
+		   let Lat=cafePositions[value].getLat();
 		   let Lng=cafePositions[value].getLng();
 					
-		    
-		    let moveLatLon = new kakao.maps.LatLng(Lat, Lng);
+		   let moveLatLon = new kakao.maps.LatLng(Lat, Lng);
 		    
 		    // 지도 중심을 부드럽게 이동시킵니다
 		    // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
-		    map.panTo(moveLatLon);            
-		}
+		   map.panTo(moveLatLon);            
+		} 
 
-/* 		var infoTitle = document.querySelectorAll('.info-c');
-		infoTitle.forEach(function(e) {
-		    var w = e.offsetWidth + 10;
-		    var ml = w/2;
-		    e.parentElement.style.top = "82px";
-		    e.parentElement.style.left = "50%";
-		    e.parentElement.style.marginLeft = -ml+"px";
-		    e.parentElement.style.width = w+"px";
-		    e.parentElement.previousSibling.style.display = "none";
-		    e.parentElement.parentElement.style.border = "0px";
-		    e.parentElement.parentElement.style.background = "unset";
-		});
-		 */
 		
-		
+		 
 	</script>		
 
 	</body>
