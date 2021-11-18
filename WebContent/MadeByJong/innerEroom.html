@@ -121,19 +121,19 @@
         z-index: 60;
       } */
 
-      .slideBackground #topTitle {
+      #topTitle {
         position: absolute;
         font-size: 22px;
         font-family: notoSans-Bold;
         color: #70BDB8;
         width: 250px;
         height: 20px;
-        top: calc(50% + 64px);
-        margin-top: calc((35vh + 30px) * -1);
+        top: 0;
+        margin-top: -50px;
         left: 50%;
         margin-left: -125px;
         text-align: center;
-        z-index: 70;
+        z-index: 150;
       }
 
       /* .slideBackground #bottomTitle {
@@ -402,20 +402,23 @@
         <p class="subText" id="callTitle">청년이룸 문의 전화 070-4913-4137</p>
         <a href="tel:070-4913-4137"><img class="call" src="./image/innerOutter/call.png" alt="전화기"></a>
       </div> -->
-      <div class="slideBackground">
+      <!-- <div class="slideBackground"> -->
         <!-- <img class="background1" src="./image/innerOutter/slideBackground1.png" alt="슬라이드 밑바탕"> -->
         <!-- <img class="background2" src="./image/innerOutter/slideBackground2.png" alt="슬라이드 차상위 바탕"> -->
         <!-- <img class="background3" src="./image/innerOutter/slideBackground3.png" alt="슬라이드 상위 바탕"> -->
-        <p class="mainText" id="topTitle">천왕역 안에서 찾아가기</p>
+        <!-- <p class="mainText" id="topTitle">천왕역 안에서 찾아가기</p> -->
         <!-- <p class="subText" id="bottomTitle">청년이룸 주소</p>
         <button id="bottomExport" type="button" name="button" onclick="addressButtonClick()"
           style="background: url(./image/innerOutter/middleBottomExport2.png) no-repeat; background-size: cover;"></button>
         <img id="buttonExportGray" src="./image/innerOutter/middleBottomExport2_gray.png" alt="버튼 가리기">; -->
-      </div>
+      <!-- </div> -->
     </div>
 
     <div class="flex-container">
       <div class="flex-item">
+        <div>
+          <p class="mainText" id="topTitle">천왕역 안에서 찾아가기</p>
+        </div>
         <div id="slider-wrap">
           <ul id="slider">
             <li>
