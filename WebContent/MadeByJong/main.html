@@ -426,8 +426,11 @@
 
     <!-- 홍보동영상 표시 -->
     <div id="mask">
-      <iframe id="videoPlay" src="https://www.youtube.com/embed/ap7DmME5bOk?enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=1&mute=1"
-        title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+      <!-- <iframe id="videoPlay" src="https://www.youtube.com/embed/ap7DmME5bOk?enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=1&mute=1"
+        title="YouTube video player" frameborder="0" allowfullscreen></iframe> -->
+      <iframe id="videoPlay" src="https://www.youtube.com/embed/ap7DmME5bOk?enablejsapi=1&version=3&playerapiid=ytplayer"
+      title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; mute; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
     </div>
     <div class="window">
       <button type="button" href="#" class="close" value="닫기(.window .close)">
@@ -486,7 +489,6 @@
             e.preventDefault();
             wrapWindowByMask();
 
-            $('#videoPlay')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
             $('#videoPlay')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
 
             advertisementPlayCount = 1;
@@ -498,7 +500,7 @@
             e.preventDefault();
             $('#mask, .window').hide();
 
-            $('#videoPlay')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+            $('#videoPlay')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
         });
     });
     </script>
