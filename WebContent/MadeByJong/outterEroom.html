@@ -6,6 +6,14 @@
     <link rel="stylesheet" href="./style.css"/>
     <script src="./script.js" type="text/javascript"></script>
 
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-584RBDQ');</script>
+    <!-- End Google Tag Manager -->
+
     <title>이루미 길잡이</title>
 
     <style>
@@ -80,7 +88,7 @@
       } */
       /* --------------------------------------------------------- */
 
-      .slideBackground .background1 {
+      /* .slideBackground .background1 {
         position: absolute;
         width: 70vw;
         height: 430px;
@@ -88,18 +96,20 @@
         margin-top: -220px;
         margin-left: 15vw;
         z-index: 40;
-      }
+      } */
 
       /* .slideBackground .background2 {
         position: absolute;
-        width: 68vw;
-        height: 350px;
-        top:50vh;
-        margin-top: -220px;
-        margin-left: 16vw;
+        width: 96vw;
+        height: 55vh;
+        top: calc(50% + 64px);
+        margin-top: -30vh;
+        left:50%;
+        margin-left: -48vw;
         z-index: 50;
-      }
+      } */
 
+      /*
       .slideBackground .background3 {
         position: absolute;
         width: 68vw;
@@ -110,19 +120,19 @@
         z-index: 60;
       } */
 
-      .slideBackground #topTitle {
+      #topTitle {
         position: absolute;
         font-size: 22px;
         font-family: notoSans-Bold;
         color: #70BDB8;
         width: 250px;
         height: 20px;
-        top: 50vh;
-        margin-top: -210px;
+        top: 0;
+        margin-top: -50px;
         left: 50%;
         margin-left: -125px;
         text-align: center;
-        z-index: 70;
+        z-index: 150;
       }
 
       /* .slideBackground #bottomTitle {
@@ -163,7 +173,7 @@
     </style>
 
     <style>
-      .flex-container .flex-item:nth-child(1) { flex-basis: 80vh; }
+      .flex-container .flex-item:nth-child(1) { flex-basis: 100%; }
     </style>
 
     <!-- 이미지 슬라이드 쇼 Style -->
@@ -176,11 +186,12 @@
 
       .flex-container {
         position: absolute;
-        width: 68vw;
+        width: 96vw;
         height: 70vh;
-        top:50vh;
-        margin-top: -180px;
-        margin-left: 16vw;
+        top: calc(50% + 64px);
+        margin-top: -35vh;
+        left: 50%;
+        margin-left: -48vw;
         z-index: 100;
       }
 
@@ -218,15 +229,15 @@
 
       #slider-wrap ul#slider li img {
           display: block;
-          width: 68vw;
-          height: 305px;
+          width: 96vw;
+          height: 65vh;
       }
 
       .slider-btns {
           position: absolute;
           width: 50px;
           height: 60px;
-          top: 30%;
+          top: 45%;
           margin-top: -25px;
           line-height: 57px;
           text-align: center;
@@ -267,13 +278,13 @@
       }
 
       #slider-pagination-wrap {
-          min-width: 20px;
-          margin-top: 400px;
-          margin-left: auto;
-          margin-right: auto;
-          height: 15px;
-          position: relative;
-          text-align: center;
+        min-width: 20px;
+        top: calc(100% - 20px);
+        margin-left: auto;
+        margin-right: auto;
+        height: 15px;
+        position: relative;
+        text-align: center;
       }
 
       #slider-pagination-wrap ul {
@@ -283,8 +294,8 @@
       #slider-pagination-wrap ul li {
           margin: 0 4px;
           display: inline-block;
-          width: 10px;
-          height: 10px;
+          width: 20px;
+          height: 20px;
           border-radius: 90%;
           background: #70BDB8;
           opacity: 0.5;
@@ -293,19 +304,19 @@
       }
 
       #slider-pagination-wrap ul li.active {
-          width: 20px;
+          /* width: 20px;
           height: 20px;
-          top: 3px;
+          top: 3px; */
           opacity: 1;
           background: #1C4060;
           -webkit-box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 0px;
           box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 0px;
       }
 
-      #slideText {
+      /* #slideText {
         color: black;
         font-size: 14px;
-      }
+      } */
 
       /*ANIMATION*/
       #slider-wrap ul,
@@ -336,43 +347,49 @@
         margin-left: 20px;
       } */
 
-     .slideBackground .background1 {
+     /* .slideBackground .background1 {
         width: 360px;
         margin-left: 70px;
-      }
+      } */
 
       .slideBackground .background2 {
-        width: 350px;
-        margin-left: 75px;
+        width: 480px;
+        margin-left: -240px;
       }
 
-      .slideBackground .background3 {
+      /* .slideBackground .background3 {
         width: 350px;
         margin-left: 75px;
-      }
+      } */
 
       .flex-container {
-        width: 350px;
-        left: 50%;
-        margin-left: -175px;
+        width: 400px;
+        margin-left: -200px;
       }
 
       #slider-wrap ul#slider li img {
-        width: 350px;
+        width: 400px;
       }
 
-      #slideText {
+      /* #slideText {
         font-size: 15px;
-      }
+      } */
     }
     </style>
 
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-584RBDQ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <div id="item-container" style="position:absolute; line-height: 0;">
       <div class="navigator">
         <img class="navigation" src="./image/all/naviBackground.png" alt="네비게이션">
-        <img class="brand" src="./image/all/brand.png" alt="브랜드 로고" width="110px" height="27px">
+        <a href="./main.html?adCount=1" alt="메인 화면">
+          <img class="brand" src="./image/all/brand.png" alt="브랜드 로고" width="110px" height="27px">
+        </a>
         <a href="javascript:window.history.back();" style="z-index:50;">
           <img class="backArrow" src="./image/all/backArrow3.png" alt="뒤로가기" width="22px" height="22px">
         </a>
@@ -384,61 +401,64 @@
         <p class="subText" id="callTitle">청년이룸 문의 전화 070-4913-4137</p>
         <a href="tel:070-4913-4137"><img class="call" src="./image/innerOutter/call.png" alt="전화기"></a>
       </div> -->
-      <div class="slideBackground">
-        <img class="background1" src="./image/innerOutter/slideBackground1.png" alt="슬라이드 밑바탕">
-        <!-- <img class="background2" src="./image/innerOutter/slideBackground2.png" alt="슬라이드 차상위 바탕">
-        <img class="background3" src="./image/innerOutter/slideBackground3.png" alt="슬라이드 상위 바탕"> -->
-        <p class="mainText" id="topTitle">천왕역 밖에서 찾아가기</p>
+      <!-- <div class="slideBackground"> -->
+        <!-- <img class="background1" src="./image/innerOutter/slideBackground1.png" alt="슬라이드 밑바탕"> -->
+        <!-- <img class="background2" src="./image/innerOutter/slideBackground2.png" alt="슬라이드 차상위 바탕"> -->
+        <!-- <img class="background3" src="./image/innerOutter/slideBackground3.png" alt="슬라이드 상위 바탕"> -->
+        <!-- <p class="mainText" id="topTitle">천왕역 밖에서 찾아가기</p> -->
         <!-- <p class="subText" id="bottomTitle">청년이룸 주소</p>
         <button id="bottomExport" type="button" name="button" onclick="addressButtonClick()"
           style="background: url(./image/innerOutter/middleBottomExport2.png) no-repeat; background-size: cover;"></button>
         <img id="buttonExportGray" src="./image/innerOutter/middleBottomExport2_gray.png" alt="버튼 가리기">; -->
-      </div>
+      <!-- </div> -->
     </div>
 
     <div class="flex-container">
       <div class="flex-item">
+        <div>
+          <p class="mainText" id="topTitle">천왕역 밖에서 찾아가기</p>
+        </div>
         <div id="slider-wrap">
           <ul id="slider">
             <li>
-              <img src="./image/innerOutter/outter/1.jpg" alt="밖에서1">
-              <p>&nbsp;</p>
-              <p class="subText" id="slideText">1) 청년이룸은 7호선 천왕역 안 지하에 위치해 있습니다. 천왕역 4번 출구 앞입니다.</p>
+              <img src="./image/innerOutter/outter/111.png" alt="밖에서1">
+              <!-- <p>&nbsp;</p>
+              <p class="subText" id="slideText">1) 청년이룸은 7호선 천왕역 안 지하에 위치해 있습니다. 천왕역 4번 출구 앞입니다.</p> -->
             </li>
             <li>
-              <img src="./image/innerOutter/outter/2.jpg" alt="밖에서2">
-              <p>&nbsp;</p>
-              <p class="subText" id="slideText">2) 4번 출구 안 계단을 내려갑니다.</p>
+              <img src="./image/innerOutter/outter/222.png" alt="밖에서2">
+              <!-- <p>&nbsp;</p>
+              <p class="subText" id="slideText">2) 4번 출구 안 계단을 내려갑니다.</p> -->
             </li>
             <li>
-              <img src="./image/innerOutter/outter/3.jpg" alt="밖에서3">
-              <p>&nbsp;</p>
-              <p class="subText" id="slideText">3) 왼쪽으로 꺾으시면 다음 계단을 보실 수 있습니다.</p>
+              <img src="./image/innerOutter/outter/333.png" alt="밖에서3">
+              <!-- <p>&nbsp;</p>
+              <p class="subText" id="slideText">3) 왼쪽으로 꺾으시면 다음 계단을 보실 수 있습니다.</p> -->
             </li>
             <li>
-              <img src="./image/innerOutter/outter/4.jpg" alt="밖에서4">
-              <p>&nbsp;</p>
-              <p class="subText" id="slideText">4) 다시 한 번 계단을 내려갑니다.</p>
+              <img src="./image/innerOutter/outter/444.png" alt="밖에서4">
+              <!-- <p>&nbsp;</p>
+              <p class="subText" id="slideText">4) 다시 한 번 계단을 내려갑니다.</p> -->
             </li>
             <li>
-              <img src="./image/innerOutter/outter/5.jpg" alt="밖에서5">
-              <p>&nbsp;</p>
-              <p class="subText" id="slideText">5) 내려오신 계단 바로 옆에 청년이룸이 위치해있습니다.</p>
+              <img src="./image/innerOutter/outter/555.png" alt="밖에서5">
+              <!-- <p>&nbsp;</p>
+              <p class="subText" id="slideText">5) 내려오신 계단 바로 옆에 청년이룸이 위치해있습니다.</p> -->
             </li>
             <li>
-              <img src="./image/innerOutter/outter/6.jpg" alt="밖에서6">
-              <p>&nbsp;</p>
-              <p class="subText" id="slideText">6) 이 투명 유리문을 통해 들어오시면 됩니다.</p>
+              <img src="./image/innerOutter/outter/666.png" alt="밖에서6">
+              <!-- <p>&nbsp;</p>
+              <p class="subText" id="slideText">6) 이 투명 유리문을 통해 들어오시면 됩니다.</p> -->
             </li>
             <li>
-              <img src="./image/innerOutter/outter/7.jpg" alt="밖에서7">
-              <p>&nbsp;</p>
-              <p class="subText" id="slideText">7) 앞으로 쭉 걸어갑니다. </p>
+              <img src="./image/innerOutter/outter/777.png" alt="밖에서7">
+              <!-- <p>&nbsp;</p>
+              <p class="subText" id="slideText">7) 앞으로 쭉 걸어갑니다. </p> -->
             </li>
             <li>
-              <img src="./image/innerOutter/outter/8.jpg" alt="밖에서8">
-              <p>&nbsp;</p>
-              <p class="subText" id="slideText">8) 청년이룸 입구입니다. QR체크인과 발열 체크 후 들어오시면 됩니다.</p>
+              <img src="./image/innerOutter/outter/888.png" alt="밖에서8">
+              <!-- <p>&nbsp;</p>
+              <p class="subText" id="slideText">8) 청년이룸 입구입니다. QR체크인과 발열 체크 후 들어오시면 됩니다.</p> -->
             </li>
           </ul>
           <div class="slider-btns" id="next"><span>▶</span></div>

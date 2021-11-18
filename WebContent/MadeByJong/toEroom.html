@@ -6,15 +6,14 @@
     <link rel="stylesheet" href="./style.css?t"/>
     <script src="./script.js" type="text/javascript"></script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F31Q6X62H0"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-584RBDQ');</script>
+    <!-- End Google Tag Manager -->
 
-      gtag('config', 'G-F31Q6X62H0');
-    </script>
 
     <title>이루미 길잡이</title>
 
@@ -52,14 +51,14 @@
       .top #mainTitle {
         position: absolute;
         top: 80px;
-        left: 25px;
+        left: 15px;
         z-index: 20;
       }
 
       .top #subTitle {
         position: absolute;
         top: 150px;
-        left: 25px;
+        left: 15px;
         z-index: 30;
       }
 
@@ -84,11 +83,11 @@
 
       .middle .top {
         position: absolute;
-        width: 340px;
-        height: 158px;
+        width: 96vw;
+        height: 24vh;
         top: 188px;
         left: 50%;
-        margin-left: -170px;
+        margin-left: -48vw;
         z-index: 40;
       }
 
@@ -107,7 +106,7 @@
         position: absolute;
         width: 220px;
         height: 18px;
-        top: 350px;
+        top: calc(183px + 24vh + 1.5vh);
         left: 50%;
         margin-left: -130px;
         z-index: 50;
@@ -116,11 +115,11 @@
 
       .middle .bottom {
         position: absolute;
-        width: 350px;
-        height: 50px;
-        top: 342px;
+        width: 98vw;
+        height: 7vh;
+        top: calc(183px + 24vh);
         left: 50%;
-        margin-left: -175px;
+        margin-left: -49vw;
         z-index: 30;
       }
 
@@ -141,49 +140,52 @@
         position: absolute;
         width: 24px;
         height: 24px;
-        top: 354px;
+        top: calc(183px + 24vh + 2vh);
         left: 50%;
         margin-left: 90px;
         z-index: 40;
+        cursor: pointer;
       }
 
       .middle #buttonExportGray {
         position: absolute;
         width: 24px;
         height: 24px;
-        top: 354px;
+        top: calc(183px + 24vh + 2vh);
         left: 50%;
         margin-left: 90px;
       }
 
       .middle #inButton {
         position: absolute;
-        width: 165px;
-        height: 60px;
-        top: 62%;
-        left: 50%;
-        margin-left: -173px;
+        width: 47vw;
+        height: 9vh;
+        top: calc(183px + 24vh + 6vh + 3vh);
+        margin-left: 1.5vw;
         z-index: 20;
+        cursor: pointer;
       }
 
       .middle #outButton {
         position: absolute;
-        width: 165px;
-        height: 60px;
-        top: 62%;
-        left: 50%;
-        margin-left: 7px;
+        width: 47vw;
+        height: 9vh;
+        top: calc(183px + 24vh + 6vh + 3vh);
+        right: 0;
+        margin-right: 1.5vw;
         z-index: 20;
+        cursor: pointer;
       }
 
       .middle #helpButton {
         position: absolute;
-        width: 346px;
-        height: 60px;
-        top: 73%;
-        left: 50%;
-        margin-left: -173px;
+        width: 96vw;
+        height: 9vh;
+        top: calc(183px + 24vh + 6vh + 3vh + 9vh + 2vh);
+        left : 50%;
+        margin-left: -48vw;
         z-index: 20;
+        cursor: pointer;
       }
 
       .middle #buttonText {
@@ -193,14 +195,21 @@
 
       /* --------------------------------------------------------- */
 
+      .bottom .image-container {
+        position: absolute;
+        width: 350px;
+        height: 190px;
+        overflow: hidden;
+        top: calc(100vh - 190px);
+        left : 50%;
+        margin-left: -175px;
+      }
+
       .bottom .character2 {
         position: absolute;
-        width: 300px;
-        height: 300px;
-        top: calc(100vh - 180px);
-        left : 50%;
-        margin-left: -150px;
-        z-index: 20;
+        width: 350px;
+        height: 350px;
+        z-index: 10;
       }
 
       /* .bottomLeft .door {
@@ -256,6 +265,33 @@
           width: 500px;
         }
 
+        .middle .top {
+          width: 480px;
+          margin-left: -240px;
+        }
+
+        .middle .bottom {
+          width: 490px;
+          margin-left: -245px;
+        }
+
+        .middle #inButton {
+          width: 235px;
+          left: 50%;
+          margin-left: -245px;
+        }
+
+        .middle #outButton {
+          width: 235px;
+          left: 50%;
+          margin-left: 5px;
+        }
+
+        .middle #helpButton {
+          width: 480px;
+          margin-left: -240px;
+        }
+
         /* .middle .top {
           width: 470px;
           left: 50%;
@@ -272,10 +308,17 @@
 
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-584RBDQ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <div id="item-container" style="position:absolute; line-height: 0;">
       <div class="navigator">
         <img class="navigation" src="./image/all/naviBackground.png" alt="네비게이션">
-        <img class="brand" src="./image/all/brand.png" alt="브랜드 로고" width="110px" height="27px">
+        <a href="./main.html?adCount=1" alt="메인 화면">
+          <img class="brand" src="./image/all/brand.png" alt="브랜드 로고" width="110px" height="27px">
+        </a>
         <a href="javascript:window.history.back();" style="z-index:50;">
           <img class="backArrow" src="./image/all/backArrow3.png" alt="뒤로가기" width="22px" height="22px">
         </a>
@@ -284,40 +327,42 @@
         <!-- <img class="background1" src="./image/toEroom/toEroomBackground1.png" alt="배경1"> -->
         <img class="character" src="./image/toEroom/character2.png" alt="캐릭터">
         <p class="mainText" id="mainTitle">청년이룸 방문하기</p>
-        <p class="subText" id="subTitle">청년이룸이 어디에 있어요?</p>
+        <p class="subText" id="subTitle">&nbsp;&nbsp;청년이룸이 어디에 있어요?</p>
         <!-- <img class="subTitleBackground" src="./image/useEroom/subTilteBackground.png" alt="소분류 배경"> -->
       </div>
       <div class="middle">
-        <img class="top" src="./image/toEroom/middleTop.png" alt="중앙부 상단">
+        <img class="top" src="./image/toEroom/eroomMap.png" alt="중앙부 상단">
         <img class="bottom" src="./image/toEroom/middleBottom.png" alt="중앙부 하단">
         <!-- <p class="mainText" id="topTitle">"구로청년공간 청년이룸"</p> -->
         <p class="subText" id="topSubTitle">서울 구로구 오리로 1130 지하1층</p>
         <!-- <p class="subText" id="bottomTitle">청년이룸 주소</p> -->
         <button id="bottomExport" type="button" name="button" onclick="addressButtonClick()"
-          style="background: url(./image/toEroom/middleBottomExport2.png) no-repeat; background-size: cover;"></button>
-        <img id="buttonExportGray" src="./image/toEroom/middleBottomExport2_gray.png" alt="버튼 가리기">;
+          style="background: url(./image/toEroom/middleBottomExport2.png) no-repeat; background-size: 100% 100%;"></button>
+        <img id="buttonExportGray" src="./image/toEroom/middleBottomExport2_gray.png" alt="버튼 가리기">
         <button id="inButton" type="button" name="button"
           onclick="location.href='./outterEroom.html'"
-          style="background: url(./image/toEroom/roundRec.png) no-repeat; background-size: cover;">
+          style="background: url(./image/toEroom/roundRec.png) no-repeat; background-size: 100% 100%;">
           <span class="subText" id="buttonText">천왕역 밖에서 찾아가기</span>
           <!-- <img class="moveButtonImage" src="./image/toEroom/moveButton2.png" alt="이동"> -->
         </button>
         <button id="outButton" type="button" name="button"
           onclick="location.href='./innerEroom.html'"
-          style="background: url(./image/toEroom/roundRec.png) no-repeat; background-size: cover;">
+          style="background: url(./image/toEroom/roundRec.png) no-repeat; background-size: 100% 100%;">
           <span class="subText" id="buttonText">천왕역 안에서 찾아가기</span>
           <!-- <img class="moveButtonImage" src="./image/toEroom/moveButton2.png" alt="이동"> -->
         </button>
         <button id="helpButton" type="button" name="button"
           onclick="location.href='tel:070-4913-4137'"
-          style="background: url(./image/toEroom/helpRec.png) no-repeat; background-size: cover;">
+          style="background: url(./image/toEroom/helpRec.png) no-repeat; background-size: 100% 100%;">
           <img class="call" src="./image/toEroom/call.png" alt="전화기" width="20px" height="20px">
           <span class="subText" id="buttonText">도움이 더 필요하시나요?</span>
           <!-- <img class="moveButtonImage" src="./image/toEroom/moveButton2.png" alt="이동"> -->
         </button>
       </div>
       <div class="bottom">
-        <img class="character2" src="./image/toEroom/bottomCharacter.png" alt="캐릭터2">
+        <div class="image-container">
+          <img class="character2" src="./image/toEroom/bottomCharacter.png" alt="캐릭터2">
+        </div>
       </div>
       <!-- <div class="bottomLeft">
         <img class="door" src="./image/toEroom/leftBottomBackground2.png" alt="배경2">
