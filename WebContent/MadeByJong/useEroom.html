@@ -50,14 +50,14 @@
       .top #mainTitle {
         position: absolute;
         top: 80px;
-        left: 25px;
+        left: 15px;
         z-index: 20;
       }
 
       .top #subTitle {
         position: absolute;
         top: 150px;
-        left: 25px;
+        left: 15px;
         z-index: 30;
       }
 
@@ -125,7 +125,7 @@
         top: 190px;
         left: 10px;
         z-index: 50;
-        border-radius: 20px;
+        cursor: pointer;
       }
       /* --------------------------------------------------------- */
 
@@ -178,7 +178,7 @@
         top: 190px;
         right: 10px;
         z-index: 50;
-        border-radius: 20px;
+        cursor: pointer;
       }
       /* --------------------------------------------------------- */
 
@@ -224,10 +224,10 @@
         position: absolute;
         width: 47vw;
         height: 33vh;
-        top: calc(33vh + 190px + 20px);
+        top: calc(33vh + 190px + 6vw - 20px);
         left: 10px;
         z-index: 50;
-        border-radius: 20px;
+        cursor: pointer;
       }
       /* --------------------------------------------------------- */
 
@@ -277,10 +277,10 @@
         position: absolute;
         width: 47vw;
         height: 33vh;
-        top: calc(33vh + 190px + 20px);
+        top: calc(33vh + 190px + 6vw - 20px);
         right: 10px;
         z-index: 50;
-        border-radius: 20px;
+        cursor: pointer;
       }
       /* --------------------------------------------------------- */
 
@@ -307,10 +307,12 @@
 
         .buttons .leftBottom .movePage {
           width: 235px;
+          top : calc(33vh + 190px + 10px);
         }
 
         .buttons .rightBottom .movePage {
           width: 235px;
+          top : calc(33vh + 190px + 10px);
         }
 
         /* .top .background1 {
@@ -362,7 +364,9 @@
     <div id="item-container" style="position:absolute; line-height: 0;">
       <div class="navigator">
         <img class="navigation" src="./image/all/naviBackground.png" alt="네비게이션">
-        <img class="brand" src="./image/all/brand.png" alt="브랜드 로고" width="110px" height="27px">
+        <a href="./main.html?adCount=1" alt="메인 화면">
+          <img class="brand" src="./image/all/brand.png" alt="브랜드 로고" width="110px" height="27px">
+        </a>
         <a href="javascript:window.history.back();" style="z-index:50;">
           <img class="backArrow" src="./image/all/backArrow3.png" alt="뒤로가기" width="22px" height="22px">
         </a>
@@ -371,7 +375,7 @@
         <!-- <img class="background1" src="./image/useEroom/useEroomBackground1.png" alt="배경1"> -->
         <img class="character" src="./image/useEroom/character2.png" alt="캐릭터">
         <p class="mainText" id="mainTitle">청년이룸 이용하기</p>
-        <p class="subText" id="subTitle">&nbsp;&nbsp;&nbsp;청년이룸에서 무엇을 할 수 있어요?</p>
+        <p class="subText" id="subTitle">&nbsp;&nbsp;청년이룸에서 무엇을 할 수 있어요?</p>
         <!-- <img class="subTitleBackground" src="./image/useEroom/subTilteBackground.png" alt="소분류 배경"> -->
       </div>
       <div class="buttons">
@@ -385,8 +389,9 @@
             style="background: url(./image/useEroom/studyArea2.png) no-repeat; background-size: cover;"
             onclick="location.href='http://www.youtheroom.kr/bbs/board.php?tbl=bbs21&PHPSESSID=bb4fe7bbea246275836b1696d7682389'"></button> -->
             <button class="movePage" type="button" name="button"
-              onclick="location.href='http://www.youtheroom.kr/bbs/board.php?tbl=bbs21&PHPSESSID=bb4fe7bbea246275836b1696d7682389'">
-                <img src="./image/useEroom/studyArea2.png" alt="공간 이용 대여">
+              style="background: url(./image/useEroom/studyArea2.png) no-repeat; background-size: 100% 100%;"
+              onclick="window.open('http://www.youtheroom.kr/bbs/board.php?tbl=bbs21&PHPSESSID=bb4fe7bbea246275836b1696d7682389')">
+                <!-- <img src="./image/useEroom/studyArea2.png" alt="공간 이용 대여"> -->
             </button>
         </div>
         <div class="rightTop">
@@ -399,8 +404,9 @@
             style="background: url(./image/useEroom/vrai2.png) no-repeat; background-size: cover;"
             onclick="location.href='http://www.youtheroom.kr/product/item.php?ca_id=10&it_id=1618306845&status=&search='"></button> -->
             <button class="movePage" type="button" name="button"
-              onclick="location.href='http://www.youtheroom.kr/product/item.php?ca_id=10&it_id=1618306845&status=&search='">
-                <img src="./image/useEroom/vrai2.png" alt="vr/ai 면접">
+              style="background: url(./image/useEroom/vrai2.png) no-repeat; background-size: 100% 100%;"
+              onclick="window.open('http://www.youtheroom.kr/product/item.php?ca_id=10&it_id=1618306845&status=&search=')">
+                <!-- <img src="./image/useEroom/vrai2.png" alt="vr/ai 면접"> -->
             </button>
         </div>
         <div class="leftBottom">
@@ -413,8 +419,9 @@
             style="background: url(./image/useEroom/program2.png) no-repeat; background-size: cover;"
             onclick="location.href='http://www.youtheroom.kr/product/list.php?ca_id=10'"></button> -->
             <button class="movePage" type="button" name="button"
-              onclick="location.href='http://www.youtheroom.kr/product/list.php?ca_id=10'">
-              <img src="./image/useEroom/program2.png" alt="프로그램 안내">
+              style="background: url(./image/useEroom/program2.png) no-repeat; background-size: 100% 100%;"
+              onclick="window.open('http://www.youtheroom.kr/product/list.php?ca_id=10')">
+              <!-- <img src="./image/useEroom/program2.png" alt="프로그램 안내"> -->
             </button>
         </div>
         <div class="rightBottom">
@@ -427,8 +434,9 @@
             style="background: url(./image/useEroom/cafe2.png) no-repeat; background-size: cover;"
             onclick="location.href='./infoEroom.html'"></button> -->
             <button class="movePage" type="button" name="button"
+              style="background: url(./image/useEroom/cafe2.png) no-repeat; background-size: 100% 100%;"
               onclick="location.href='./infoEroom.html'">
-                <img src="./image/useEroom/cafe2.png" alt="카페 이용 안내">
+                <!-- <img src="./image/useEroom/cafe2.png" alt="카페 이용 안내"> -->
             </button>
         </div>
       </div>

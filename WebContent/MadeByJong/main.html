@@ -67,11 +67,7 @@
 
       #slider-wrap ul#slider li img {
           display: block;
-          width: calc(100vw - 20px);
-          /* height: 70vh; */
-          padding-left: 10px;
-          padding-right: 10px;
-          background-color: #C4C4C4;
+          width: 100vw;
       }
 
       .slider-btns {
@@ -197,6 +193,7 @@
         text-align: left;
         padding: 0 10px;
         line-height: 0;
+        cursor: pointer;
       }
       /* --------------------------------------------------------- */
 
@@ -207,12 +204,12 @@
         z-index: 10;
       }
 
-      .navigator .backArrow {
+      /* .navigator .backArrow {
         position: absolute;
         top:30px;
         right:10px;
         z-index: 20;
-      }
+      } */
 
       .navigator .brand {
         position: absolute;
@@ -236,9 +233,7 @@
         }
 
         #slider-wrap ul#slider li img {
-          width: 460px;
-          padding-left: 20px;
-          padding-right: 20px;
+          width: 500px;
         }
 
         .window {
@@ -262,9 +257,9 @@
       <div class="navigator">
         <img class="navigation" src="./image/all/naviBackground.png" alt="네비게이션">
         <img class="brand" src="./image/all/brand.png" alt="브랜드 로고" width="110px" height="27px">
-        <a href="javascript:window.history.back();" style="z-index:50;">
+        <!-- <a href="javascript:window.history.back();" style="z-index:50;">
           <img class="backArrow" src="./image/all/backArrow3.png" alt="뒤로가기" width="22px" height="22px">
-        </a>
+        </a> -->
       </div>
     </div>
 
@@ -293,12 +288,12 @@
       </div>
       <div class="flex-item">
         <button class="mainButton" type="button" name="button" onclick="buttonClick(1)"
-         style="background: url(./image/main/mainButton1.png) no-repeat; background-size: cover; position:relative">
+         style="background: url(./image/main/mainButton1.png) no-repeat; background-size: 100% 100%; position:relative">
           <ul margin-left="10px">
             <li class="mainText">청년이룸 방문하기</li>
             <li>&nbsp;</li>
             <li class="subText">
-              &nbsp;&nbsp;&nbsp;청년이룸이 어디에 있어요?
+              &nbsp;&nbsp;청년이룸이 어디에 있어요?
               <img class="moveButtonImage" src="./image/main/moveButton2.png" alt="이동"
                 style="position:absolute; right: 10px; bottom: 10px;">
             </li>
@@ -307,11 +302,11 @@
       </div>
       <div class="flex-item">
         <button class="mainButton"  type="button" name="button" onclick="buttonClick(2)"
-          style="background: url(./image/main/mainButton2.png) no-repeat; background-size: cover; position:relative">
+          style="background: url(./image/main/mainButton2.png) no-repeat; background-size: 100% 100%; position:relative">
           <ul margin-left="10px">
             <li class="mainText">청년이룸 이용하기</li>
             <li class="subText">
-              &nbsp;&nbsp;&nbsp;청년이룸에서 무엇을 할 수 있어요?
+              &nbsp;&nbsp;청년이룸에서 무엇을 할 수 있어요?
               <img class="moveButtonImage" src="./image/main/moveButton2.png" alt="이동"
                 style="position:absolute; right: 10px; bottom: 10px;">
             </li>
@@ -320,12 +315,12 @@
       </div>
       <div class="flex-item">
         <button class="mainButton"  type="button" name="button" onclick="buttonClick(3)"
-          style="background: url(./image/main/mainButton3.png) no-repeat; background-size: cover; position:relative">
+          style="background: url(./image/main/mainButton3.png) no-repeat; background-size: 100% 100%; position:relative">
           <ul margin-left="10px">
             <li class="mainText">청년이룸 주변보기</li>
             <li>&nbsp;</li>
             <li class="subText">
-              &nbsp;&nbsp;&nbsp;청년이룸 주변에는 무엇이 있어요?
+              &nbsp;&nbsp;청년이룸 주변에는 무엇이 있어요?
               <img class="moveButtonImage" src="./image/main/moveButton2.png" alt="이동"
                 style="position:absolute; right: 10px; bottom: 10px;">
             </li>

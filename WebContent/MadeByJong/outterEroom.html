@@ -98,17 +98,16 @@
         z-index: 40;
       } */
 
-      .slideBackground .background2 {
+      /* .slideBackground .background2 {
         position: absolute;
         width: 96vw;
-        height: 50vh;
-        top: 50%;
-        margin-top: -25vh;
+        height: 55vh;
+        top: calc(50% + 64px);
+        margin-top: -30vh;
         left:50%;
         margin-left: -48vw;
-        border-radius: 10px;
         z-index: 50;
-      }
+      } */
 
       /*
       .slideBackground .background3 {
@@ -128,8 +127,8 @@
         color: #70BDB8;
         width: 250px;
         height: 20px;
-        top: 50%;
-        margin-top: calc((31.5vh + 20px) * -1);
+        top: calc(50% + 64px);
+        margin-top: calc((35vh + 30px) * -1);
         left: 50%;
         margin-left: -125px;
         text-align: center;
@@ -187,12 +186,12 @@
 
       .flex-container {
         position: absolute;
-        width: 80vw;
+        width: 96vw;
         height: 70vh;
-        top: 50%;
-        margin-top: -31.5vh;
+        top: calc(50% + 64px);
+        margin-top: -35vh;
         left: 50%;
-        margin-left: -40vw;
+        margin-left: -48vw;
         z-index: 100;
       }
 
@@ -230,15 +229,15 @@
 
       #slider-wrap ul#slider li img {
           display: block;
-          width: 80vw;
-          height: 60vh;
+          width: 96vw;
+          height: 65vh;
       }
 
       .slider-btns {
           position: absolute;
           width: 50px;
           height: 60px;
-          top: 40%;
+          top: 45%;
           margin-top: -25px;
           line-height: 57px;
           text-align: center;
@@ -280,7 +279,7 @@
 
       #slider-pagination-wrap {
         min-width: 20px;
-        top: calc(60vh + 10px);
+        top: calc(100% - 20px);
         margin-left: auto;
         margin-right: auto;
         height: 15px;
@@ -295,8 +294,8 @@
       #slider-pagination-wrap ul li {
           margin: 0 4px;
           display: inline-block;
-          width: 10px;
-          height: 10px;
+          width: 20px;
+          height: 20px;
           border-radius: 90%;
           background: #70BDB8;
           opacity: 0.5;
@@ -388,7 +387,9 @@
     <div id="item-container" style="position:absolute; line-height: 0;">
       <div class="navigator">
         <img class="navigation" src="./image/all/naviBackground.png" alt="네비게이션">
-        <img class="brand" src="./image/all/brand.png" alt="브랜드 로고" width="110px" height="27px">
+        <a href="./main.html?adCount=1" alt="메인 화면">
+          <img class="brand" src="./image/all/brand.png" alt="브랜드 로고" width="110px" height="27px">
+        </a>
         <a href="javascript:window.history.back();" style="z-index:50;">
           <img class="backArrow" src="./image/all/backArrow3.png" alt="뒤로가기" width="22px" height="22px">
         </a>
@@ -402,7 +403,7 @@
       </div> -->
       <div class="slideBackground">
         <!-- <img class="background1" src="./image/innerOutter/slideBackground1.png" alt="슬라이드 밑바탕"> -->
-        <img class="background2" src="./image/innerOutter/slideBackground2.png" alt="슬라이드 차상위 바탕">
+        <!-- <img class="background2" src="./image/innerOutter/slideBackground2.png" alt="슬라이드 차상위 바탕"> -->
         <!-- <img class="background3" src="./image/innerOutter/slideBackground3.png" alt="슬라이드 상위 바탕"> -->
         <p class="mainText" id="topTitle">천왕역 밖에서 찾아가기</p>
         <!-- <p class="subText" id="bottomTitle">청년이룸 주소</p>
@@ -417,42 +418,42 @@
         <div id="slider-wrap">
           <ul id="slider">
             <li>
-              <img src="./image/innerOutter/outter/11.png" alt="밖에서1">
+              <img src="./image/innerOutter/outter/111.png" alt="밖에서1">
               <!-- <p>&nbsp;</p>
               <p class="subText" id="slideText">1) 청년이룸은 7호선 천왕역 안 지하에 위치해 있습니다. 천왕역 4번 출구 앞입니다.</p> -->
             </li>
             <li>
-              <img src="./image/innerOutter/outter/22.png" alt="밖에서2">
+              <img src="./image/innerOutter/outter/222.png" alt="밖에서2">
               <!-- <p>&nbsp;</p>
               <p class="subText" id="slideText">2) 4번 출구 안 계단을 내려갑니다.</p> -->
             </li>
             <li>
-              <img src="./image/innerOutter/outter/33.png" alt="밖에서3">
+              <img src="./image/innerOutter/outter/333.png" alt="밖에서3">
               <!-- <p>&nbsp;</p>
               <p class="subText" id="slideText">3) 왼쪽으로 꺾으시면 다음 계단을 보실 수 있습니다.</p> -->
             </li>
             <li>
-              <img src="./image/innerOutter/outter/44.png" alt="밖에서4">
+              <img src="./image/innerOutter/outter/444.png" alt="밖에서4">
               <!-- <p>&nbsp;</p>
               <p class="subText" id="slideText">4) 다시 한 번 계단을 내려갑니다.</p> -->
             </li>
             <li>
-              <img src="./image/innerOutter/outter/55.png" alt="밖에서5">
+              <img src="./image/innerOutter/outter/555.png" alt="밖에서5">
               <!-- <p>&nbsp;</p>
               <p class="subText" id="slideText">5) 내려오신 계단 바로 옆에 청년이룸이 위치해있습니다.</p> -->
             </li>
             <li>
-              <img src="./image/innerOutter/outter/66.png" alt="밖에서6">
+              <img src="./image/innerOutter/outter/666.png" alt="밖에서6">
               <!-- <p>&nbsp;</p>
               <p class="subText" id="slideText">6) 이 투명 유리문을 통해 들어오시면 됩니다.</p> -->
             </li>
             <li>
-              <img src="./image/innerOutter/outter/77.png" alt="밖에서7">
+              <img src="./image/innerOutter/outter/777.png" alt="밖에서7">
               <!-- <p>&nbsp;</p>
               <p class="subText" id="slideText">7) 앞으로 쭉 걸어갑니다. </p> -->
             </li>
             <li>
-              <img src="./image/innerOutter/outter/88.png" alt="밖에서8">
+              <img src="./image/innerOutter/outter/888.png" alt="밖에서8">
               <!-- <p>&nbsp;</p>
               <p class="subText" id="slideText">8) 청년이룸 입구입니다. QR체크인과 발열 체크 후 들어오시면 됩니다.</p> -->
             </li>

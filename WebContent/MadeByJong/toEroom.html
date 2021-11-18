@@ -51,14 +51,14 @@
       .top #mainTitle {
         position: absolute;
         top: 80px;
-        left: 25px;
+        left: 15px;
         z-index: 20;
       }
 
       .top #subTitle {
         position: absolute;
         top: 150px;
-        left: 25px;
+        left: 15px;
         z-index: 30;
       }
 
@@ -144,6 +144,7 @@
         left: 50%;
         margin-left: 90px;
         z-index: 40;
+        cursor: pointer;
       }
 
       .middle #buttonExportGray {
@@ -161,8 +162,8 @@
         height: 9vh;
         top: calc(183px + 24vh + 6vh + 3vh);
         margin-left: 1.5vw;
-        border-radius: 10px;
         z-index: 20;
+        cursor: pointer;
       }
 
       .middle #outButton {
@@ -172,8 +173,8 @@
         top: calc(183px + 24vh + 6vh + 3vh);
         right: 0;
         margin-right: 1.5vw;
-        border-radius: 10px;
         z-index: 20;
+        cursor: pointer;
       }
 
       .middle #helpButton {
@@ -183,8 +184,8 @@
         top: calc(183px + 24vh + 6vh + 3vh + 9vh + 2vh);
         left : 50%;
         margin-left: -48vw;
-        border-radius: 10px;
         z-index: 20;
+        cursor: pointer;
       }
 
       .middle #buttonText {
@@ -315,7 +316,9 @@
     <div id="item-container" style="position:absolute; line-height: 0;">
       <div class="navigator">
         <img class="navigation" src="./image/all/naviBackground.png" alt="네비게이션">
-        <img class="brand" src="./image/all/brand.png" alt="브랜드 로고" width="110px" height="27px">
+        <a href="./main.html?adCount=1" alt="메인 화면">
+          <img class="brand" src="./image/all/brand.png" alt="브랜드 로고" width="110px" height="27px">
+        </a>
         <a href="javascript:window.history.back();" style="z-index:50;">
           <img class="backArrow" src="./image/all/backArrow3.png" alt="뒤로가기" width="22px" height="22px">
         </a>
@@ -324,7 +327,7 @@
         <!-- <img class="background1" src="./image/toEroom/toEroomBackground1.png" alt="배경1"> -->
         <img class="character" src="./image/toEroom/character2.png" alt="캐릭터">
         <p class="mainText" id="mainTitle">청년이룸 방문하기</p>
-        <p class="subText" id="subTitle">&nbsp;&nbsp;&nbsp;청년이룸이 어디에 있어요?</p>
+        <p class="subText" id="subTitle">&nbsp;&nbsp;청년이룸이 어디에 있어요?</p>
         <!-- <img class="subTitleBackground" src="./image/useEroom/subTilteBackground.png" alt="소분류 배경"> -->
       </div>
       <div class="middle">
@@ -334,23 +337,23 @@
         <p class="subText" id="topSubTitle">서울 구로구 오리로 1130 지하1층</p>
         <!-- <p class="subText" id="bottomTitle">청년이룸 주소</p> -->
         <button id="bottomExport" type="button" name="button" onclick="addressButtonClick()"
-          style="background: url(./image/toEroom/middleBottomExport2.png) no-repeat; background-size: cover;"></button>
-        <img id="buttonExportGray" src="./image/toEroom/middleBottomExport2_gray.png" alt="버튼 가리기">;
+          style="background: url(./image/toEroom/middleBottomExport2.png) no-repeat; background-size: 100% 100%;"></button>
+        <img id="buttonExportGray" src="./image/toEroom/middleBottomExport2_gray.png" alt="버튼 가리기">
         <button id="inButton" type="button" name="button"
           onclick="location.href='./outterEroom.html'"
-          style="background: url(./image/toEroom/roundRec.png) no-repeat; background-size: cover;">
+          style="background: url(./image/toEroom/roundRec.png) no-repeat; background-size: 100% 100%;">
           <span class="subText" id="buttonText">천왕역 밖에서 찾아가기</span>
           <!-- <img class="moveButtonImage" src="./image/toEroom/moveButton2.png" alt="이동"> -->
         </button>
         <button id="outButton" type="button" name="button"
           onclick="location.href='./innerEroom.html'"
-          style="background: url(./image/toEroom/roundRec.png) no-repeat; background-size: cover;">
+          style="background: url(./image/toEroom/roundRec.png) no-repeat; background-size: 100% 100%;">
           <span class="subText" id="buttonText">천왕역 안에서 찾아가기</span>
           <!-- <img class="moveButtonImage" src="./image/toEroom/moveButton2.png" alt="이동"> -->
         </button>
         <button id="helpButton" type="button" name="button"
           onclick="location.href='tel:070-4913-4137'"
-          style="background: url(./image/toEroom/helpRec.png) no-repeat; background-size: cover;">
+          style="background: url(./image/toEroom/helpRec.png) no-repeat; background-size: 100% 100%;">
           <img class="call" src="./image/toEroom/call.png" alt="전화기" width="20px" height="20px">
           <span class="subText" id="buttonText">도움이 더 필요하시나요?</span>
           <!-- <img class="moveButtonImage" src="./image/toEroom/moveButton2.png" alt="이동"> -->
