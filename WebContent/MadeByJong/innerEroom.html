@@ -39,88 +39,6 @@
       }
       /* --------------------------------------------------------- */
 
-      /* .middle .background1 {
-        position: absolute;
-        top: 64px;
-        width: 100vw;
-        height: calc(100vh - 64px);
-        z-index: 10;
-      }
-
-      .middle .background2 {
-        position: absolute;
-        top: 50vh;
-        width: 100vw;
-        height: 50vh;
-        z-index: 20;
-      }
-
-      .middle .background3 {
-        position: absolute;
-        width: 90vw;
-        height: 300px;
-        top: 50vh;
-        margin-top: -150px;
-        margin-left: 5vw;
-        z-index: 30;
-      }
-
-      .middle #callTitle {
-        position: absolute;
-        width: 240px;
-        height: 20px;
-        top: calc(100% - 20px);
-        left: 50%;
-        margin-left: -120px;
-        z-index: 30;
-        color: #70BDBB;
-        text-align: center;
-      }
-
-      .middle .call {
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        top: calc(100% - 30px);
-        left: 50%;
-        margin-left: -140px;
-        z-index: 30;
-      } */
-      /* --------------------------------------------------------- */
-
-      /* .slideBackground .background1 {
-        position: absolute;
-        width: 82vw;
-        height: 63vh;
-        top: calc(50% + 64px);
-        margin-top: -30vh;
-        left: 50%;
-        margin-left: -41vw;
-        z-index: 40;
-      } */
-
-      /* .slideBackground .background2 {
-        position: absolute;
-        width: 96vw;
-        height: 55vh;
-        top: calc(50% + 64px);
-        margin-top: -30vh;
-        left:50%;
-        margin-left: -48vw;
-        z-index: 50;
-      } */
-
-      /*
-      .slideBackground .background3 {
-        position: absolute;
-        width: 68vw;
-        height: 45px;
-        top:50vh;
-        margin-top: -220px;
-        margin-left: 16vw;
-        z-index: 60;
-      } */
-
       #topTitle {
         position: absolute;
         font-size: 22px;
@@ -135,41 +53,6 @@
         text-align: center;
         z-index: 150;
       }
-
-      /* .slideBackground #bottomTitle {
-        position: absolute;
-        font-size: 20px;
-        color: black;
-        width: 220px;
-        height: 20px;
-        top: 50vh;
-        margin-top: 153px;
-        left: 50%;
-        margin-left: -95px;
-        text-align: center;
-        z-index: 70;
-      }
-
-      .slideBackground #bottomExport {
-        position: absolute;
-        width: 24px;
-        height: 24px;
-        top: 50vh;
-        margin-top: 143px;
-        left: 50%;
-        margin-left: 80px;
-        z-index: 110;
-      }
-
-      .slideBackground #buttonExportGray {
-        position: absolute;
-        width: 24px;
-        height: 24px;
-        top: 50vh;
-        margin-top: 143px;
-        left: 50%;
-        margin-left: 80px;
-      } */
       /* --------------------------------------------------------- */
     </style>
 
@@ -189,8 +72,7 @@
         position: absolute;
         width: 96vw;
         height: 70vh;
-        top: calc(50% + 64px);
-        margin-top: -35vh;
+        top: 150px;
         left: 50%;
         margin-left: -48vw;
         z-index: 100;
@@ -295,8 +177,8 @@
       #slider-pagination-wrap ul li {
           margin: 0 4px;
           display: inline-block;
-          width: 20px;
-          height: 20px;
+          width: 14px;
+          height: 14px;
           border-radius: 90%;
           background: #70BDB8;
           opacity: 0.5;
@@ -305,19 +187,11 @@
       }
 
       #slider-pagination-wrap ul li.active {
-          /* width: 20px;
-          height: 20px;
-          top: 3px; */
           opacity: 1;
           background: #1C4060;
           -webkit-box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 0px;
           box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 0px;
       }
-
-      /* #slideText {
-        color: #1C4060;
-        font-size: 14px;
-      } */
 
       /*ANIMATION*/
       #slider-wrap ul,
@@ -334,34 +208,10 @@
         width: 500px;
       }
 
-      /* .middle .background1 {
-        width: 500px;
-      }
-
-      .middle .background2 {
-        width: 500px;
-      }
-
-      .middle .background3 {
-        width: 460px;
-        margin-left: 20px;
-      } */
-
-     /* .slideBackground .background1 {
-        width: 360px;
-        margin-left: 70px;
-      } */
-
       .slideBackground .background2 {
         width: 480px;
         margin-left: -240px;
       }
-
-      /*
-      .slideBackground .background3 {
-        width: 350px;
-        margin-left: 75px;
-      } */
 
       .flex-container {
         width: 400px;
@@ -371,10 +221,6 @@
       #slider-wrap ul#slider li img {
         width: 400px;
       }
-
-      /* #slideText {
-        font-size: 15px;
-      } */
     }
     </style>
 
@@ -395,23 +241,6 @@
           <img class="backArrow" src="./image/all/backArrow3.png" alt="뒤로가기" width="22px" height="22px">
         </a>
       </div>
-      <!-- <div class="middle">
-        <img class="background1" src="./image/innerOutter/background1.png" alt="밑바탕">
-        <img class="background2" src="./image/innerOutter/background2.png" alt="차상위 바탕">
-        <img class="background3" src="./image/innerOutter/background3.png" alt="상위 바탕">
-        <p class="subText" id="callTitle">청년이룸 문의 전화 070-4913-4137</p>
-        <a href="tel:070-4913-4137"><img class="call" src="./image/innerOutter/call.png" alt="전화기"></a>
-      </div> -->
-      <!-- <div class="slideBackground"> -->
-        <!-- <img class="background1" src="./image/innerOutter/slideBackground1.png" alt="슬라이드 밑바탕"> -->
-        <!-- <img class="background2" src="./image/innerOutter/slideBackground2.png" alt="슬라이드 차상위 바탕"> -->
-        <!-- <img class="background3" src="./image/innerOutter/slideBackground3.png" alt="슬라이드 상위 바탕"> -->
-        <!-- <p class="mainText" id="topTitle">천왕역 안에서 찾아가기</p> -->
-        <!-- <p class="subText" id="bottomTitle">청년이룸 주소</p>
-        <button id="bottomExport" type="button" name="button" onclick="addressButtonClick()"
-          style="background: url(./image/innerOutter/middleBottomExport2.png) no-repeat; background-size: cover;"></button>
-        <img id="buttonExportGray" src="./image/innerOutter/middleBottomExport2_gray.png" alt="버튼 가리기">; -->
-      <!-- </div> -->
     </div>
 
     <div class="flex-container">
@@ -423,48 +252,27 @@
           <ul id="slider">
             <li>
               <img src="./image/innerOutter/inner/111.png" alt="안에서1">
-              <!-- <p>&nbsp;</p>
-              <p class="subText" id="slideText">7호선 천왕역입니다.</p>
-              <p class="subText" id="slideText">청년이룸은 천왕역 안에 위치해 있습니다.</p> -->
             </li>
             <li>
               <img src="./image/innerOutter/inner/222.png" alt="안에서2">
-              <!-- <p>&nbsp;</p>
-              <p class="subText" id="slideText">개찰구를 지나 4번 출구를 찾아</p>
-              <p class="subText" id="slideText">걸어가시면 계단을 보실 수 있습니다.</p> -->
             </li>
             <li>
               <img src="./image/innerOutter/inner/333.png" alt="안에서3">
-              <!-- <p>&nbsp;</p>
-              <p class="subText" id="slideText">계단을 오릅니다.</p> -->
             </li>
             <li>
               <img src="./image/innerOutter/inner/444.png" alt="안에서4">
-              <!-- <p>&nbsp;</p>
-              <p class="subText" id="slideText">왼쪽 통로의 계단을 올라</p>
-              <p class="subText" id="slideText">50m를 직진하시면 됩니다.</p> -->
             </li>
             <li>
               <img src="./image/innerOutter/inner/555.png" alt="안에서5">
-              <!-- <p>&nbsp;</p>
-              <p class="subText" id="slideText">통로 끝에서 왼쪽으로 가시면</p>
-              <p class="subText" id="slideText">3개의 기둥을 지나칩니다.</p> -->
             </li>
             <li>
               <img src="./image/innerOutter/inner/666.png" alt="안에서6">
-              <!-- <p>&nbsp;</p>
-              <p class="subText" id="slideText">이 투명 유리문을 통해 들어오시면 됩니다.</p> -->
             </li>
             <li>
               <img src="./image/innerOutter/inner/777.png" alt="안에서7">
-              <!-- <p>&nbsp;</p>
-              <p class="subText" id="slideText">앞으로 쭉 걸어갑니다.</p> -->
             </li>
             <li>
               <img src="./image/innerOutter/inner/888.png" alt="안에서8">
-              <!-- <p>&nbsp;</p>
-              <p class="subText" id="slideText">청년이룸 입구입니다.</p>
-              <p class="subText" id="slideText">QR체크인과 발열 체크 후 들어오시면 됩니다.</p> -->
             </li>
           </ul>
           <div class="slider-btns" id="next"><span>▶</span></div>
