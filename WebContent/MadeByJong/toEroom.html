@@ -44,6 +44,7 @@
         position: absolute;
         top: 80px;
         left: 15px;
+        color: #1C4060;
         z-index: 20;
       }
 
@@ -78,27 +79,33 @@
         position: absolute;
         width: 94vw;
         height: 7vh;
-        top: calc(183px + 24vh);
+        top: calc(181px + 24vh);
         left: 50%;
         margin-left: -47vw;
         z-index: 30;
         cursor: pointer;
-      }
-
-      .middle #bottomExport_image {
-        position: absolute;
-        width: 24px;
-        height: 24px;
+        border-radius: 20px;
       }
 
       .middle #buttonExportGray2 {
         position: absolute;
-        width: 90vw;
+        width: 91vw;
         height: calc(7vh - 2px);
-        top: calc(183px + 24vh);
+        top: calc(181px + 24vh);
         left: 50%;
-        margin-left: -45vw;
+        margin-left: -45.5vw;
         border-radius: 10px;
+      }
+
+      .middle .bottomExport2 .address {
+        position: absolute;
+        width: 240px;
+        height: 21px;
+        top: 50%;
+        margin-top: -10px;
+        left: 50%;
+        margin-left: -120px;
+        justify-content: center;
       }
 
       .middle #inButton {
@@ -131,6 +138,17 @@
         margin-left: -46vw;
         z-index: 20;
         cursor: pointer;
+      }
+
+      .middle #helpButton .helpContent {
+        position: absolute;
+        width: 180px;
+        height: 21px;
+        top:50%;
+        margin-top: -10px;
+        left: 50%;
+        margin-left: -90px;
+        justify-content: center;
       }
       /* --------------------------------------------------------- */
 
@@ -220,8 +238,10 @@
         <img class="top" src="./image/toEroom/eroomMap.png" alt="중앙부 상단">
         <button class="bottomExport2" type="button" name="button" onclick="addressButtonClick()"
           style="background: url(./image/toEroom/middleBottom.png) no-repeat; background-size: 100% 100%;">
-          <span class="subText" id="topSubTitle">서울 구로구 오리로 1130 지하1층&nbsp;</span>
-          <img id="bottomExport_image" src="./image/toEroom/middleBottomExport2.png" alt="복사하기" >
+          <div class="address">
+            <span class="subText" id="topSubTitle">서울 구로구 오리로 1130 지하1층</span>
+            <img id="bottomExport_image" src="./image/toEroom/middleBottomExport2.png" alt="복사하기" width="24px" height="24px" style="float:right;">
+          </div>
         </button>
         <img id="buttonExportGray2" src="./image/toEroom/middleBottomExport2_gray.png" alt="버튼 가리기">
 
@@ -240,8 +260,12 @@
         <button id="helpButton" type="button" name="button"
           onclick="location.href='tel:070-4913-4137'"
           style="background: url(./image/toEroom/helpRec.png) no-repeat; background-size: 100% 100%;">
-          <img class="call" src="./image/toEroom/call.png" alt="전화기" width="20px" height="20px" style="position: absolute; margin-left: -24px;">
-          <span class="subText" id="buttonText" style="color: white; font-family: notoSans-Bold;">도움이 더 필요하시나요?</span>
+          <div class="helpContent">
+            <!-- <img class="call" src="./image/toEroom/call.png" alt="전화기" width="20px" height="20px" style="position: absolute; margin-left: -24px;">
+            <span class="subText" id="buttonText" style="color: white; font-family: notoSans-Bold;">도움이 더 필요하시나요?</span> -->
+            <img class="call" src="./image/toEroom/call.png" alt="전화기" width="24px" height="24px" style="float:left">
+            <span class="subText" id="buttonText" style="color: white; font-family: notoSans-Bold;">도움이 더 필요하시나요?</span>
+          </div>
         </button>
       </div>
       <div class="bottom">
