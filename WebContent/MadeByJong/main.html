@@ -116,11 +116,11 @@
 
       #slider-pagination-wrap {
           min-width: 20px;
-          margin-left: auto;
+          right: 10px;
           margin-right: auto;
           height: 15px;
           position: relative;
-          text-align: center;
+          text-align: right;
       }
 
       #slider-pagination-wrap ul {
@@ -130,8 +130,8 @@
       #slider-pagination-wrap ul li {
           margin: 0 4px;
           display: inline-block;
-          width: 10px;
-          height: 10px;
+          width: 14px;
+          height: 14px;
           border-radius: 90%;
           background: #70BDB8;
           opacity: 0.5;
@@ -204,13 +204,6 @@
         z-index: 10;
       }
 
-      /* .navigator .backArrow {
-        position: absolute;
-        top:30px;
-        right:10px;
-        z-index: 20;
-      } */
-
       .navigator .brand {
         position: absolute;
         top:30px;
@@ -257,9 +250,6 @@
       <div class="navigator">
         <img class="navigation" src="./image/all/naviBackground.png" alt="네비게이션">
         <img class="brand" src="./image/all/brand.png" alt="브랜드 로고" width="110px" height="27px">
-        <!-- <a href="javascript:window.history.back();" style="z-index:50;">
-          <img class="backArrow" src="./image/all/backArrow3.png" alt="뒤로가기" width="22px" height="22px">
-        </a> -->
       </div>
     </div>
 
@@ -272,13 +262,13 @@
               </li>
               <li>
                 <a href="#" class="openMask">
-                  <img src="./image/main/advertisement.jpg" alt="청년 이룸센터">
+                  <img src="./image/main/advertisement2.png" alt="홍보동영상">
                 </a>
               </li>
           </ul>
           <div class="slider-btns" id="next"><span>▶</span></div>
           <div class="slider-btns" id="previous"><span>◀</span></div>
-          <div id="slider-pagination-wrap" style="text-align:right;">
+          <div id="slider-pagination-wrap">
             <ul>
 
             </ul>
@@ -293,7 +283,7 @@
             <li class="mainText">청년이룸 방문하기</li>
             <li>&nbsp;</li>
             <li class="subText">
-              &nbsp;&nbsp;청년이룸이 어디에 있어요?
+              &nbsp;청년이룸이 어디에 있어요?
               <img class="moveButtonImage" src="./image/main/moveButton2.png" alt="이동"
                 style="position:absolute; right: 10px; bottom: 10px;">
             </li>
@@ -306,7 +296,7 @@
           <ul margin-left="10px">
             <li class="mainText">청년이룸 이용하기</li>
             <li class="subText">
-              &nbsp;&nbsp;청년이룸에서 무엇을 할 수 있어요?
+              &nbsp;청년이룸에서 무엇을 할 수 있어요?
               <img class="moveButtonImage" src="./image/main/moveButton2.png" alt="이동"
                 style="position:absolute; right: 10px; bottom: 10px;">
             </li>
@@ -320,7 +310,7 @@
             <li class="mainText">청년이룸 주변보기</li>
             <li>&nbsp;</li>
             <li class="subText">
-              &nbsp;&nbsp;청년이룸 주변에는 무엇이 있어요?
+              &nbsp;청년이룸 주변에는 무엇이 있어요?
               <img class="moveButtonImage" src="./image/main/moveButton2.png" alt="이동"
                 style="position:absolute; right: 10px; bottom: 10px;">
             </li>
@@ -426,9 +416,7 @@
 
     <!-- 홍보동영상 표시 -->
     <div id="mask">
-      <!-- <iframe id="videoPlay" src="https://www.youtube.com/embed/ap7DmME5bOk?enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=1&mute=1"
-        title="YouTube video player" frameborder="0" allowfullscreen></iframe> -->
-      <iframe id="videoPlay" src="https://www.youtube.com/embed/ap7DmME5bOk?enablejsapi=1&version=3&playerapiid=ytplayer"
+      <iframe id="videoPlay" src="https://www.youtube.com/embed/4uNGACyMAe4?enablejsapi=1&version=3&playerapiid=ytplayer"
       title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; mute; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen></iframe>
     </div>
