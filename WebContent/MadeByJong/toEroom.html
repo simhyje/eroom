@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="./style.css?t"/>
     <script src="./script.js" type="text/javascript"></script>
 
+    <!-- 오픈 url 이미지 -->
+    <meta property="og:title" content="이루미 길잡이" />
+    <meta property="og:description" content="내일을 꿈꾸는 청년 이루미들을 위한 공간 구로 청년이룸" />
+    <meta property="og:image" content="./image/all/openLinkImage.png" />
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -14,15 +19,14 @@
     })(window,document,'script','dataLayer','GTM-584RBDQ');</script>
     <!-- End Google Tag Manager -->
 
-
     <title>이루미 길잡이</title>
 
     <style>
-      .navigator .navigation {
+      .navigator {
         position: relative;
         width: 100vw;
         height: 64px;
-        z-index: 10;
+        background-color: #1C4060;
       }
 
       .navigator .backArrow {
@@ -67,33 +71,34 @@
 
       .middle .top {
         position: absolute;
-        width: 92vw;
-        height: 24vh;
+        width: 94vw;
+        height: 31vh;
         top: 188px;
         left: 50%;
-        margin-left: -46vw;
+        margin-left: -47vw;
         z-index: 40;
       }
 
       .middle .bottomExport2 {
         position: absolute;
-        width: 94vw;
+        width: 90vw;
         height: 7vh;
         top: calc(181px + 24vh);
         left: 50%;
-        margin-left: -47vw;
-        z-index: 30;
+        margin-left: -45vw;
+        z-index: 50;
         cursor: pointer;
-        border-radius: 20px;
+        opacity: 1;
+        border-radius: 10px;
       }
 
       .middle #buttonExportGray2 {
-        position: absolute;
-        width: 91vw;
-        height: calc(7vh - 2px);
+        position: fixed;
+        width: 90vw;
+        height: 7vh;
         top: calc(181px + 24vh);
         left: 50%;
-        margin-left: -45.5vw;
+        margin-left: -45vw;
         border-radius: 10px;
       }
 
@@ -106,9 +111,10 @@
         left: 50%;
         margin-left: -120px;
         justify-content: center;
+        background-color: white;
       }
 
-      .middle #inButton {
+      .middle #out_button {
         position: absolute;
         width: 45vw;
         height: 9vh;
@@ -118,7 +124,7 @@
         cursor: pointer;
       }
 
-      .middle #outButton {
+      .middle #in_button {
         position: absolute;
         width: 45vw;
         height: 9vh;
@@ -129,7 +135,7 @@
         cursor: pointer;
       }
 
-      .middle #helpButton {
+      .middle #help_button {
         position: absolute;
         width: 92vw;
         height: 9vh;
@@ -140,7 +146,7 @@
         cursor: pointer;
       }
 
-      .middle #helpButton .helpContent {
+      .middle #help_button .helpContent {
         position: absolute;
         width: 180px;
         height: 21px;
@@ -172,7 +178,7 @@
 
 
       @media (min-width:500px) {
-        .navigator .navigation {
+        .navigator {
           width: 500px;
         }
 
@@ -182,28 +188,28 @@
         }
 
         .middle .bottomExport2 {
-          width: 470px;
-          margin-left: -235px;
+          width: 440px;
+          margin-left: -220px;
         }
 
         .middle #buttonExportGray2 {
-          width: 450px;
-          margin-left: -225px;
+          width: 440px;
+          margin-left: -220px;
         }
 
-        .middle #inButton {
+        .middle #out_button {
           width: 225px;
           left: 50%;
           margin-left: -230px;
         }
 
-        .middle #outButton {
+        .middle #in_button {
           width: 225px;
           left: 50%;
           margin-left: 5px;
         }
 
-        .middle #helpButton {
+        .middle #help_button {
           width: 460px;
           margin-left: -230px;
         }
@@ -219,11 +225,10 @@
 
     <div id="item-container" style="position:absolute; line-height: 0;">
       <div class="navigator">
-        <img class="navigation" src="./image/all/naviBackground.png" alt="네비게이션">
-        <a href="./main.html?adCount=1" alt="메인 화면">
+        <a id="to_main" href="./main.html?adCount=1" alt="메인 화면">
           <img class="brand" src="./image/all/brand.png" alt="브랜드 로고" width="110px" height="27px">
         </a>
-        <a href="javascript:window.history.back();" style="z-index:50;">
+        <a id="to_back" href="javascript:window.history.back();" style="z-index:50;">
           <img class="backArrow" src="./image/all/backArrow3.png" alt="뒤로가기" width="22px" height="22px">
         </a>
       </div>
@@ -235,9 +240,8 @@
       </div>
 
       <div class="middle">
-        <img class="top" src="./image/toEroom/eroomMap.png" alt="중앙부 상단">
-        <button class="bottomExport2" type="button" name="button" onclick="addressButtonClick()"
-          style="background: url(./image/toEroom/middleBottom.png) no-repeat; background-size: 100% 100%;">
+        <img class="top" src="./image/toEroom/eroomMap2.png" alt="중앙부 상단">
+        <button class="bottomExport2" id="copy_address" type="button" name="button" onclick="addressButtonClick()">
           <div class="address">
             <span class="subText" id="topSubTitle">서울 구로구 오리로 1130 지하1층</span>
             <img id="bottomExport_image" src="./image/toEroom/middleBottomExport2.png" alt="복사하기" width="24px" height="24px" style="float:right;">
@@ -245,19 +249,19 @@
         </button>
         <img id="buttonExportGray2" src="./image/toEroom/middleBottomExport2_gray.png" alt="버튼 가리기">
 
-        <button id="inButton" type="button" name="button"
+        <button id="out_button" type="button" name="button"
           onclick="location.href='./outterEroom.html'"
           style="background: url(./image/toEroom/roundRec.png) no-repeat; background-size: 100% 100%;">
           <span class="subText" id="buttonText" style="color: white; font-family: notoSans-Bold;">천왕역 밖에서 찾아가기</span>
         </button>
 
-        <button id="outButton" type="button" name="button"
+        <button id="in_button" type="button" name="button"
           onclick="location.href='./innerEroom.html'"
           style="background: url(./image/toEroom/roundRec.png) no-repeat; background-size: 100% 100%;">
           <span class="subText" id="buttonText" style="color: white; font-family: notoSans-Bold;">천왕역 안에서 찾아가기</span>
         </button>
 
-        <button id="helpButton" type="button" name="button"
+        <button id="help_button" type="button" name="button"
           onclick="location.href='tel:070-4913-4137'"
           style="background: url(./image/toEroom/helpRec.png) no-repeat; background-size: 100% 100%;">
           <div class="helpContent">
