@@ -8,6 +8,11 @@
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="./script.js" type="text/javascript"></script>
 
+    <!-- 오픈 url 이미지 -->
+    <meta property="og:title" content="이루미 길잡이" />
+    <meta property="og:description" content="내일을 꿈꾸는 청년 이루미들을 위한 공간 구로 청년이룸" />
+    <meta property="og:image" content="./image/all/openLinkImage.png" />
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -94,23 +99,23 @@
           background: rgba(0, 0, 0, 0.3);
       }
 
-      #next {
+      #main_right {
           right: -50px;
           border-radius: 7px 0px 0px 7px;
           color: #eee;
       }
 
-      #previous {
+      #main_left {
           left: -50px;
           border-radius: 0px 7px 7px 7px;
           color: #eee;
       }
 
-      #slider-wrap.active #next {
+      #slider-wrap.active #main_right {
           right: 0px;
       }
 
-      #slider-wrap.active #previous {
+      #slider-wrap.active #main_left {
           left: 0px;
       }
 
@@ -197,11 +202,11 @@
       }
       /* --------------------------------------------------------- */
 
-      .navigator .navigation {
+      .navigator {
         position: relative;
         width: 100vw;
         height: 64px;
-        z-index: 10;
+        background-color: #1C4060;
       }
 
       .navigator .brand {
@@ -234,7 +239,7 @@
           height: 108px;
         }
 
-        .navigator .navigation {
+        .navigator {
           width: 500px;
         }
       }
@@ -248,7 +253,6 @@
 
     <div id="item-container" style="position:absolute; line-height: 0;">
       <div class="navigator">
-        <img class="navigation" src="./image/all/naviBackground.png" alt="네비게이션">
         <img class="brand" src="./image/all/brand.png" alt="브랜드 로고" width="110px" height="27px">
       </div>
     </div>
@@ -266,8 +270,8 @@
                 </a>
               </li>
           </ul>
-          <div class="slider-btns" id="next"><span>▶</span></div>
-          <div class="slider-btns" id="previous"><span>◀</span></div>
+          <div class="slider-btns" id="main_right"><span>▶</span></div>
+          <div class="slider-btns" id="main_left"><span>◀</span></div>
           <div id="slider-pagination-wrap">
             <ul>
 
@@ -277,7 +281,7 @@
 
       </div>
       <div class="flex-item">
-        <button class="mainButton" type="button" name="button" onclick="buttonClick(1)"
+        <button class="mainButton" id="to_eroom" type="button" name="button" onclick="buttonClick(1)"
          style="background: url(./image/main/mainButton1.png) no-repeat; background-size: 100% 100%; position:relative">
           <ul margin-left="10px">
             <li class="mainText" style="color: #1C4060;">청년이룸 방문하기</li>
@@ -291,7 +295,7 @@
         </button>
       </div>
       <div class="flex-item">
-        <button class="mainButton"  type="button" name="button" onclick="buttonClick(2)"
+        <button class="mainButton" id="use_eroom" type="button" name="button" onclick="buttonClick(2)"
           style="background: url(./image/main/mainButton2.png) no-repeat; background-size: 100% 100%; position:relative">
           <ul margin-left="10px">
             <li class="mainText" style="color: #1C4060;">청년이룸 이용하기</li>
@@ -304,7 +308,7 @@
         </button>
       </div>
       <div class="flex-item">
-        <button class="mainButton"  type="button" name="button" onclick="buttonClick(3)"
+        <button class="mainButton" id="find_store" type="button" name="button" onclick="buttonClick(3)"
           style="background: url(./image/main/mainButton3.png) no-repeat; background-size: 100% 100%; position:relative">
           <ul margin-left="10px">
             <li class="mainText" style="color: #1C4060;">청년이룸 주변보기</li>
@@ -353,8 +357,8 @@
       slider.style.width = sliderWidth * totalSlides + 'px';
 
       // next, prev
-      var nextBtn = document.getElementById('next');
-      var prevBtn = document.getElementById('previous');
+      var nextBtn = document.getElementById('main_right');
+      var prevBtn = document.getElementById('main_left');
       nextBtn.addEventListener('click', function () {
           plusSlides(1);
       });
