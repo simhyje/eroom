@@ -113,7 +113,7 @@ body{
    }
    a:link{
 	text-decoration:none;
-	font-color:#1C1C1C;
+	font-color:#04040;
 	}
    .icon, .icon2{
 	line-height: 50px;
@@ -122,25 +122,34 @@ body{
 	border-bottom:solid 1px #DCDCDC;
 	height: 40px;
 	line-height: 40px;
-	display: table-cell; 
+	display: table-cell;
 	padding:5px 0px 5px 0px;
 	margin:0px;
 	padding-left:20px;
 	width:500px;
 }
+.icon{
+color:#5EA4B8;
+}
+.icon2{
+color:#EE6B56;
+}
 .foodicon{
 	margin-top:10px;
 	margin-right:5px;
 	margin-bottom:-2px;
-	margin-left:5px;
+	margin-left:4px;
 }
 .cafeicon{
 	margin-top:10px;
 	margin-right:5px;
-	margin-bottom:-6px;
-	margin-left:5px;
+	margin-bottom:-2px;
+	margin-left:4px;
 }
-
+.list{
+font-color:#C4C4C4;
+color:#C4C4C4;
+}
 .table{
 height:34vh;
 
@@ -175,9 +184,9 @@ overflow-x:hidden;
 	justify-content: flex-start;
 	margin-left:8%;
 	background-color:#FFFFFF;
-	font-color:black;
-	opacity:0.75;
-	color:#1C1C1C;
+	font-color:#404040;
+/* 	opacity:0.75; */
+ 	color:#404040;
 	width:70%;
 }
 .cafelist{
@@ -187,7 +196,7 @@ overflow-x:hidden;
 	margin-left:8%;
 	width:70%;
 	background-color:#FFFFFF;
-	color:#1C1C1C;
+	color:#404040;
 }
 .food{
 	display:flex;
@@ -227,7 +236,7 @@ overflow-x:hidden;
 	color:#FE7762;
 }
 .info{
-	font-size:13px;
+	font-size:15px;
 	background-color:#ffffff;
 	border-radius:10px;
 	border-style:solid;
@@ -236,11 +245,11 @@ overflow-x:hidden;
 	font-weight:bold;
 	color:#5EA4B8;
 	opacity:0.9;
-	padding:3px 7px 4px 6.5px;
-	margin:15px 0px 2px 0px;
+	padding:5px 7px 4px 6.5px;
+	margin:20px 0px 2px 0px;
 }
 .info-c{
-	font-size:13px;
+	font-size:15px;
 	background-color:#ffffff;
 	border-radius: 25px;
 	border-style:solid;
@@ -248,15 +257,15 @@ overflow-x:hidden;
 	border-color:#FE7762;
 	font-weight:bold;
 	color:#FE7762;
-	padding:1px 6px 3px 6px;
-	margin:15px 0px 2px 0px;
+	padding:5px 6px 3px 6px;
+	margin:20px 0px 2px 0px;
 }
 .center{
 	font-size:17px;
 	background-color:#ffffff;
 	border-radius: 60px;
 	border-style:solid;
-	border-width:0.1px;
+	border-width:2px;
 	border-color:#1C4060;
 	color:#1C4060;
 	opacity:0.9;
@@ -301,32 +310,37 @@ overflow-x:hidden;
 	margin-right:10%;
 	}
 	.info{
-	font-size:13px;
+	font-size:15px;
 	background-color:#ffffff;
 	border-radius:10px;
 	border-style:solid;
-	border-width:1px;
+	border-width:2px;
 	border-color:#5EA4B8;
 	font-weight:bold;
 	color:#5EA4B8;
 	opacity:0.9;
-	padding:4px 7px 4px 6.5px;
-	margin:15px 0px 2px 0px;
+	padding:5px 6px 3px 6px;
+	margin:20px 0px 2px 0px;
 }
 .info-c{
-	font-size:13px;
+	font-size:15px;
 	background-color:#ffffff;
 	border-radius: 25px;
 	border-style:solid;
-	border-width:0.1px;
+	border-width:2px;
 	border-color:#FE7762;
 	font-weight:bold;
 	color:#FE7762;
-	padding:3px 6px 4px 6px;
-	margin:15px 0px 2px 0px;
+	padding:5px 6px 3px 6px;
+	margin:20px 0px 2px 0px;
 }	
-	
-	
+/* 	.foodicon{
+	margin-top:10px;
+	margin-right:5px;
+	margin-bottom:-2px;
+	margin-left:0px;
+	}
+	 */
 }
 
 
@@ -357,7 +371,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       	</div> 
 	  </div>
 	<div class="table">
-	 	<div class="icon"><img src="./image/foodicon.svg" class="foodicon">음식점 LIST</div>
+	 	<div class="icon"><img src="./image/foodicon.svg" class="foodicon">음식점<span class="list"> LIST</span></div>
 		<div id="foodlist">
 		<ul>
 			<li onclick="panTo(0)" class="foodlist"><a href="#" class="foodlist">국수나무 천왕점</a></li>
@@ -392,7 +406,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<li class="food"><a href="http://naver.me/xWowKzhy" target="_blank" class="food2" id="food8"><img src="./image/morefood.svg">더보기</a></li>
 		</ul>
 		<ul>
-			<li onclick="panTo(8)" class="foodlist"><a href="#" class="foodlist">핑거존 브런치카페</a></li>
+			<li onclick="panTo(8)" class="foodlist"><a href="#" class="foodlist">핑거존</a></li>
 			<li class="food"><a href="http://naver.me/xAt4jXk2" target="_blank" class="food2" id="food9"><img src="./image/morefood.svg">더보기</a></li>
 		</ul>
 		<ul>	
@@ -401,7 +415,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</ul>
 		</div>
 	
-	 	<div class="icon2"><img src="./image/cafeicon.svg" class="cafeicon">카페/디저트 LIST</div> 
+	 	<div class="icon2"><img src="./image/cafeicon.svg" class="cafeicon">카페/디저트 <span class="list">LIST</span></div> 
 	 		<div id="cafelist">
 			<ul>	
 				<li onclick="panTo2(0)" class="cafelist"><a href="#" class="cafelist">12NOI </a></li>
@@ -440,7 +454,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<li class="cafe"><a href="http://naver.me/5bXhMUSm" target="_blank" class="cafe2" id="cafe9"><img src="./image/morecafe.svg">더보기</a></li>
 			</ul>
 			<ul>	
-				<li onclick="panTo2(9)" class="cafelist"><a href="#" class="cafelist">핑거존 브런치카페</a></li>
+				<li onclick="panTo2(9)" class="cafelist"><a href="#" class="cafelist">핑거존</a></li>
 				<li class="cafe"><a href="http://naver.me/xAt4jXk2" target="_blank" class="cafe2" id="food9"><img src="./image/morecafe.svg">더보기</a></li>
 			</ul>
 		</div>
@@ -530,7 +544,7 @@ new kakao.maps.LatLng(37.4811198515805, 126.839725683889), //핑거존브런치
 		content : '<div class="info">국수나무</div>',
 		latlng : new kakao.maps.LatLng(37.4812206902152, 126.839008321337)
 	},{
-	content : '<div class="info" style="margin-left:35px;magin-bottom:10px;">돈우네</div>',
+	content : '<div class="info">돈우네</div>',
 	latlng : new kakao.maps.LatLng(37.487582, 126.839170)
 }, {
 	content : '<div class="info">롯데리아</div>',
@@ -542,7 +556,7 @@ new kakao.maps.LatLng(37.4811198515805, 126.839725683889), //핑거존브런치
 	content : '<div class="info">사생활</div>',
 	latlng : new kakao.maps.LatLng(37.4912054930086, 126.842026722372)
 },{
-	content : '<div class="info" style="margin-right:30px;">시키스시</div>',
+	content : '<div class="info" style="margin-right:10px;">시키스시</div>',
 	latlng : new kakao.maps.LatLng(37.4875691857332, 126.838807227175)
 },{
 	content : '<div class="info">식탐</div>',
@@ -622,10 +636,10 @@ function createfoodMarkers() {
 let marker2 = new Array();
 let overlay = new Array();
 	for (let i = 0; i < foodPositions.length; i++) {
-		let imageSize = new kakao.maps.Size(50, 40),
+		let imageSize = new kakao.maps.Size(60, 50),
         imageOptions = {  
             spriteOrigin: new kakao.maps.Point(0, 0),    
-            spriteSize: new kakao.maps.Size(50,40)  
+            spriteSize: new kakao.maps.Size(60,50)  
         };     
 				
      // 마커이미지와 마커를 생성합니다
@@ -671,10 +685,10 @@ function createcafeMarkers() {
 	let marker2 = new Array();
 	for (let i = 0; i < cafePositions.length; i++) {
 		
-	     let imageSize = new kakao.maps.Size(50, 40),
+	     let imageSize = new kakao.maps.Size(60, 50),
             imageOptions = {  
                 spriteOrigin: new kakao.maps.Point(0, 0),    
-                spriteSize: new kakao.maps.Size(50, 40)  
+                spriteSize: new kakao.maps.Size(60, 50)  
             };     
         
         // 마커이미지와 마커를 생성합니다
@@ -731,7 +745,7 @@ function changeMarker(type) {
 		$(".icon2").hide();
 		let moveLatLon = new kakao.maps.LatLng(37.485657, 126.839531);
 	    map.panTo(moveLatLon); 
-		/*  $('<li><img src="./image/foodpic.svg"></li>').insertBefore('.foodlist') */
+
 	    
 	    
 		
