@@ -106,27 +106,28 @@ body{
    	z-index:9999;
    	float:left;
    }
-   #foodMenu, #cafeMenu{
-/*    border:1px solid #FFFFFF;
- /*   box-shadow: 5px 5px 5px #BDBDBD; */
-
-   }
    a:link{
 	text-decoration:none;
 	font-color:#04040;
 	}
+	.iconn{
+	padding-left:20px;
+		border-bottom:solid 1px #DCDCDC;
+	}
+	
+	
    .icon, .icon2{
 	line-height: 50px;
 	font-weight: bold;
 	border-right:solid 1px #DCDCDC;
-	border-bottom:solid 1px #DCDCDC;
+/* 	border-bottom:solid 1px #DCDCDC; */
 	height: 40px;
 	line-height: 40px;
-	display: table-cell;
-	padding:5px 0px 5px 0px;
+	padding:10px 0px 10px 0px;
 	margin:0px;
-	padding-left:20px;
-	width:500px;
+
+/* 	padding-left:20px; */
+	width:100%;
 }
 .icon{
 color:#5EA4B8;
@@ -143,7 +144,7 @@ color:#EE6B56;
 .cafeicon{
 	margin-top:10px;
 	margin-right:5px;
-	margin-bottom:-2px;
+ 	margin-bottom:-5px;
 	margin-left:4px;
 }
 .list{
@@ -152,7 +153,6 @@ color:#C4C4C4;
 }
 .table{
 height:34vh;
-
 }
    .table ul li{  
 	list-style:none;
@@ -334,13 +334,7 @@ overflow-x:hidden;
 	padding:5px 6px 3px 6px;
 	margin:20px 0px 2px 0px;
 }	
-/* 	.foodicon{
-	margin-top:10px;
-	margin-right:5px;
-	margin-bottom:-2px;
-	margin-left:0px;
-	}
-	 */
+
 }
 
 
@@ -370,8 +364,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</div>
       	</div> 
 	  </div>
-	<div class="table">
+	  <div class="iconn">
 	 	<div class="icon"><img src="./image/foodicon.svg" class="foodicon">음식점<span class="list"> LIST</span></div>
+	 	<div class="icon2"><img src="./image/cafeicon.svg" class="cafeicon">카페/디저트 <span class="list">LIST</span></div> 
+	  </div>
+	<div class="table">
+		
 		<div id="foodlist">
 		<ul>
 			<li onclick="panTo(0)" class="foodlist"><a href="#" class="foodlist">국수나무 천왕점</a></li>
@@ -415,7 +413,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</ul>
 		</div>
 	
-	 	<div class="icon2"><img src="./image/cafeicon.svg" class="cafeicon">카페/디저트 <span class="list">LIST</span></div> 
+	<!--  	<div class="icon2"><img src="./image/cafeicon.svg" class="cafeicon">카페/디저트 <span class="list">LIST</span></div>  -->
 	 		<div id="cafelist">
 			<ul>	
 				<li onclick="panTo2(0)" class="cafelist"><a href="#" class="cafelist">12NOI </a></li>
