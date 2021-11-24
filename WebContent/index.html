@@ -27,6 +27,20 @@
       .flex-container .flex-item:nth-child(2) { flex-basis: 40%; }
       .flex-container .flex-item:nth-child(3) { flex-basis: 30%; }
     </style>
+
+    <style>
+      #eroomLogo {
+        width: 50%;
+        height: auto;
+      }
+
+      @media (min-width: 500px) {
+        #eroomLogo {
+          width: 250px;
+        }
+      }
+    </style>
+
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -37,10 +51,11 @@
     <div class="flex-container">
       <div class="flex-item"></div>
       <div class="flex-item">
-        <img id="eroomLogo" src="./MadeByJong/image/intro/eroomLogo.png" alt="청년 이룸센터" width="300px" height="300px">
+        <img src="./MadeByJong/image/intro/loading2.gif" alt="불러오는 중" width="60%" height="auto">
       </div>
       <div class="flex-item">
-        <img src="./MadeByJong/image/intro/loading2.gif" alt="불러오는 중" width="50%" height="50%">
+        <img id="eroomLogo" src="./MadeByJong/image/intro/eroomLogo2.png" alt="청년 이룸센터"
+          style="position:absolute; bottom: 80px;">
       </div>
     </div>
   </body>
