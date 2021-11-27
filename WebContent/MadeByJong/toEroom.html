@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="./style.css?t"/>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="./script.js" type="text/javascript"></script>
 
     <!-- 오픈 url 이미지 -->
@@ -89,16 +90,6 @@
         z-index: 50;
         cursor: pointer;
         opacity: 1;
-        border-radius: 10px;
-      }
-
-      .middle #buttonExportGray2 {
-        position: fixed;
-        width: 90vw;
-        height: 7vh;
-        top: calc(181px + 24vh);
-        left: 50%;
-        margin-left: -45vw;
         border-radius: 10px;
       }
 
@@ -192,10 +183,10 @@
           margin-left: -220px;
         }
 
-        .middle #buttonExportGray2 {
+        /* .middle #buttonExportGray2 {
           width: 440px;
           margin-left: -220px;
-        }
+        } */
 
         .middle #out_button {
           width: 225px;
@@ -214,6 +205,39 @@
           margin-left: -230px;
         }
       }
+    </style>
+
+    <!-- 주소 복사 버튼 클릭 시 Modal -->
+    <style>
+      /* The Modal (background) */
+     .modal {
+         position: fixed; /* Stay in place */
+         z-index: 10000;
+         left: 0;
+         top: 0;
+         width: 100%; /* Full width */
+         height: 100%; /* Full height */
+         overflow: auto; /* Enable scroll if needed */
+         background-color: rgb(0,0,0); /* Fallback color */
+         background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+     }
+
+     /* Modal Content/Box */
+     .modal-content {
+         position:relative;
+         background-color: #fefefe;
+         padding: 5px;
+         border: 1px solid #888;
+         border-radius: 10px;
+         width: 200px;
+         height: 30px;
+         top: 50%;
+         margin-top: -15px;
+         left: 50%;
+         margin-left: -100px;
+         text-align: center;
+         background-color: #1C4060;
+     }
     </style>
 
   </head>
@@ -240,14 +264,20 @@
       </div>
 
       <div class="middle">
-        <img class="top" src="./image/toEroom/eroomMap2.png" alt="중앙부 상단">
+        <img class="top" src="./image/toEroom/eroomMap3.png" alt="중앙부 상단">
         <button class="bottomExport2" id="copy_address" type="button" name="button" onclick="addressButtonClick()">
           <div class="address">
             <span class="subText" id="topSubTitle">서울 구로구 오리로 1130 지하1층</span>
             <img id="bottomExport_image" src="./image/toEroom/middleBottomExport2.png" alt="복사하기" width="24px" height="24px" style="float:right;">
           </div>
         </button>
-        <img id="buttonExportGray2" src="./image/toEroom/middleBottomExport2_gray.png" alt="버튼 가리기">
+        <!-- <img id="buttonExportGray2" src="./image/toEroom/middleBottomExport2_gray.png" alt="버튼 가리기"> -->
+
+        <div id="myModal" class = "modal">
+          <div class="modal-content">
+            <p class="subText" style="color: white;">주소가 복사되었습니다.</p>
+          </div>
+        </div>
 
         <button id="out_button" type="button" name="button"
           onclick="location.href='./outterEroom.html'"
@@ -294,15 +324,17 @@
         sel.removeRange(range); //선택 정보 삭제
       }
 
+      $('#myModal').hide();
+
       //청년이룸 주소 버튼 클릭
       function addressButtonClick() {
+        $('#myModal').show();
+
+        setTimeout(function() { $('#myModal').hide(); }, 300);
+
         addressCopy();
-
-        let grayImage = document.getElementById('buttonExportGray2');
-        grayImage.style.zIndex = 120;
-
-        setTimeout(function() { grayImage.style.zIndex = 0; }, 200);
       }
     </script>
+
   </body>
 </html>
